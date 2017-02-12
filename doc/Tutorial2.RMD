@@ -16,6 +16,7 @@ library(dtplyr)
 library(dplyr)
 library(DT)
 library(lubridate)
+library(devtools)
 ```
 
 ## Install shiny

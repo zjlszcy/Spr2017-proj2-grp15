@@ -1,0 +1,26 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+##load the data manipulation libraries
+```{r}
+
+```
+
+##load in the data
+```{r}
+crimes <- read.csv("../data/OPE CSS Custom Data 2017-02-12 134856/Criminal_Offenses_On_campus.csv")
+for(i in 6:19){
+  as.numeric(crimes[,i])
+} #convert integer to numberic
+```
+
+##trend
+```{r}
+crimes$total <- rowSums(crimes[,-c(1:6)],na.rm = TRUE) #sum of all types of crimes for each institution
+crimes.split <- split(crimes, f = as.factor(crimes$Survey.year))
+year.sum <- NA
+for(i in 1: length(crimes.split)){
+ year.sum[i] <- sum(crimes.split[[i]]$total) 
+} #calculate total crimes of every year
+```

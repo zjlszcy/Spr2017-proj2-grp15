@@ -24,3 +24,8 @@ for(i in 1: length(crimes.split)){
  year.sum[i] <- sum(crimes.split[[i]]$total) 
 } #calculate total crimes of every year
 ```
+
+```{r}
+library(ggmap)
+locations <- geocode(as.character(unique(crimes$Institution.name[1:50])))
+```

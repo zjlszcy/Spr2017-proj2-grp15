@@ -12,12 +12,15 @@ crimes <- read.csv("../data/OPE CSS Custom Data 2017-02-12 134856/Criminal_Offen
 
 ## Get Unique Campus Names
 length(unique(crimes$Institution.name))
-campus_1 <- as.character(unique(crimes$Institution.name))[1:2500]
-campus_2 <- as.character(unique(crimes$Institution.name))[2501:2884]
+campus_1 <- as.character(unique(crimes$Institution.name))[1:960] # chenyun
+campus_2 <- as.character(unique(crimes$Institution.name))[961:1921] # nanjun
+campus_3 <- as.character(unique(crimes$Institution.name))[1922:2884] # yuxin
 
 ## Can only search 2500 at one time
-coordinate_1 <- geocode(campus_1)
-coordinate_2 <- geocode(campus_2)
+coordinate_1 <- geocode(campus_1) # chenyun
+coordinate_2 <- geocode(campus_2) # nanjun
+coordinate_3 <- geocode(campus_3) # yuxin
+
 # which(is.na(coordinate)) some of them are NA
 
 ## Get U.S. Map

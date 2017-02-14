@@ -1,0 +1,31 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(ggplot2)
+library(ggmap)
+
+## Total Crimes on Campus in U.S.
+crimes <- read.csv("../data/OPE CSS Custom Data 2017-02-12 134856/Criminal_Offenses_On_campus.csv")
+
+## Get Unique Campus Names
+length(unique(crimes$Institution.name))
+campus_1 <- as.character(unique(crimes$Institution.name)) # chenyun
+campus_2 <- as.character(unique(crimes$Institution.name))[961:1921] # nanjun
+campus_3 <- as.character(unique(crimes$Institution.name))[1922:2884] # yuxin
+
+## Can only search 2500 at one time
+coordinate_1 <- geocode(campus_1) # chenyun
+coordinate_2 <- geocode(campus_2) # nanjun
+coordinate_3 <- geocode(campus_3) # yuxin
+
+# which(is.na(coordinate)) some of them are NA
+
+## Get U.S. Map
+map <- get_map(location = "united states", zoom = 4, maptype = "toner",source = "stamen")
+
+## Plot the Campus Locations
+ggmap(map, base_layer = ggplot(aes(x = lon, y = lat), data = coordinate_1)) + geom_point(color = "red", alpha = 1)
+```

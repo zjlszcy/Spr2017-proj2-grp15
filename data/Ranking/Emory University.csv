@@ -1,0 +1,77 @@
+Survey year,Unitid,Institution name,Campus ID, Campus Name,Institution Size,Murder/Non-negligent manslaughter,Negligent manslaughter,Sex offenses - Forcible,Rape,Fondling,Sex offenses - Non-forcible,Incest,Statutory rape,Robbery,Aggravated assault,Burglary,Motor vehicle theft,Arson
+2001,139658,Emory University,1,Main Campus,11443,0,0,2,,,0,,,4,3,22,10,2
+2001,139658,Emory University,2,Oxford College Campus,11443,0,0,0,,,0,,,0,0,2,0,0
+2001,139658,Emory University,3,Emory University Hospital Midtown Campus,11443,0,0,1,,,0,,,1,1,1,7,0
+2001,139658,Emory University,4,Carter Center Campus,11443,0,0,0,,,0,,,0,0,0,0,0
+2001,139658,Emory University,5,Emory University Grady Area Campus,11443,0,0,0,,,0,,,0,0,0,0,0
+2002,139658,Emory University,1,Main Campus,11600,0,0,5,,,0,,,3,2,21,8,0
+2002,139658,Emory University,2,Oxford College Campus,11600,0,0,0,,,0,,,0,0,0,1,0
+2002,139658,Emory University,3,Emory University Hospital Midtown Campus,11600,0,0,1,,,0,,,1,1,0,0,0
+2002,139658,Emory University,4,Carter Center Campus,11600,0,0,0,,,0,,,0,0,0,0,0
+2002,139658,Emory University,5,Emory University Grady Area Campus,11600,0,0,0,,,0,,,0,0,0,0,0
+2003,139658,Emory University,1,Main Campus,11654,0,0,5,,,0,,,2,5,25,11,32
+2003,139658,Emory University,2,Oxford College Campus,11654,0,0,1,,,0,,,0,0,1,0,0
+2003,139658,Emory University,3,Emory University Hospital Midtown Campus,11654,0,0,0,,,0,,,0,0,0,2,0
+2003,139658,Emory University,4,Carter Center Campus,11654,0,0,0,,,0,,,0,0,0,0,0
+2003,139658,Emory University,5,Emory University Grady Area Campus,11654,0,0,0,,,0,,,0,0,0,0,0
+2004,139658,Emory University,1,Main Campus,11781,0,0,5,,,0,,,2,0,39,8,1
+2004,139658,Emory University,2,Oxford College Campus,11781,0,0,2,,,0,,,0,0,2,0,1
+2004,139658,Emory University,3,Emory University Hospital Midtown Campus,11781,0,0,0,,,0,,,0,0,2,2,0
+2004,139658,Emory University,4,Carter Center Campus,11781,0,0,0,,,0,,,0,0,0,0,0
+2004,139658,Emory University,5,Emory University Grady Area Campus,11781,0,0,0,,,0,,,0,0,3,0,0
+2005,139658,Emory University,1,Main Campus,12134,0,0,14,,,0,,,0,5,55,6,1
+2005,139658,Emory University,2,Oxford College Campus,12134,0,0,1,,,0,,,0,0,12,1,0
+2005,139658,Emory University,3,Emory University Hospital Midtown Campus,12134,0,0,1,,,0,,,2,0,0,5,0
+2005,139658,Emory University,4,Carter Center Campus,12134,0,0,0,,,0,,,0,0,0,0,0
+2005,139658,Emory University,5,Emory University Grady Area Campus,12134,0,0,0,,,0,,,0,0,0,0,0
+2006,139658,Emory University,1,Main Campus,12338,0,0,9,,,0,,,6,3,49,7,0
+2006,139658,Emory University,2,Oxford College Campus,12338,0,0,0,,,0,,,0,0,7,0,0
+2006,139658,Emory University,3,Emory University Hospital Midtown Campus,12338,0,0,0,,,0,,,0,0,0,2,1
+2006,139658,Emory University,4,Carter Center Campus,12338,0,0,0,,,0,,,0,0,0,0,0
+2006,139658,Emory University,5,Emory University Grady Area Campus,12338,0,0,0,,,0,,,0,0,1,0,0
+2007,139658,Emory University,1,Main Campus,12570,0,0,10,,,0,,,1,0,31,1,0
+2007,139658,Emory University,2,Oxford College Campus,12570,0,0,0,,,0,,,0,0,4,0,0
+2007,139658,Emory University,3,Emory University Hospital Midtown Campus,12570,0,0,2,,,0,,,2,0,0,0,0
+2007,139658,Emory University,4,Carter Center Campus,12570,0,0,0,,,0,,,0,0,0,0,0
+2007,139658,Emory University,5,Emory University Grady Area Campus,12570,0,0,0,,,0,,,0,0,2,0,0
+2008,139658,Emory University,1,Main Campus,12755,0,0,2,,,0,,,1,0,41,12,0
+2008,139658,Emory University,2,Oxford College Campus,12755,0,0,1,,,0,,,0,0,6,6,0
+2008,139658,Emory University,3,Emory University Hospital Midtown Campus,12755,0,0,0,,,0,,,1,0,0,1,0
+2008,139658,Emory University,4,Carter Center Campus,12755,0,0,0,,,0,,,0,0,1,1,0
+2008,139658,Emory University,5,Emory University Grady Area Campus,12755,0,0,0,,,0,,,0,0,0,3,0
+2009,139658,Emory University,1,Main Campus,12930,0,0,9,,,0,,,0,0,7,19,1
+2009,139658,Emory University,2,Oxford College Campus,12930,0,0,0,,,0,,,0,0,2,3,0
+2009,139658,Emory University,3,Emory University Hospital Midtown Campus,12930,0,0,0,,,0,,,0,0,0,3,0
+2009,139658,Emory University,4,Carter Center Campus,12930,0,0,0,,,0,,,0,0,0,0,0
+2009,139658,Emory University,5,Emory University Grady Area Campus,12930,0,0,0,,,0,,,0,0,0,0,0
+2010,139658,Emory University,1,Main Campus,13381,0,0,10,,,0,,,2,2,14,10,0
+2010,139658,Emory University,2,Oxford College Campus,13381,0,0,0,,,0,,,0,0,1,2,0
+2010,139658,Emory University,3,Emory University Hospital Midtown Campus,13381,0,0,1,,,0,,,0,0,0,1,0
+2010,139658,Emory University,4,Carter Center Campus,13381,0,0,0,,,0,,,0,0,2,0,0
+2010,139658,Emory University,5,Emory University Grady Area Campus,13381,0,0,0,,,0,,,0,0,0,0,0
+2011,139658,Emory University,1,Main Campus,13893,0,0,12,,,1,,,1,1,8,10,1
+2011,139658,Emory University,2,Oxford College Campus,13893,0,0,3,,,0,,,0,0,2,5,0
+2011,139658,Emory University,3,Emory University Hospital Midtown Campus,13893,0,0,0,,,0,,,1,0,1,1,1
+2011,139658,Emory University,4,Carter Center Campus,13893,0,0,0,,,0,,,0,0,0,0,0
+2011,139658,Emory University,5,Emory University Grady Area Campus,13893,0,0,0,,,0,,,0,0,0,0,0
+2012,139658,Emory University,1,Main Campus,14236,0,0,25,,,0,,,0,1,7,8,3
+2012,139658,Emory University,2,Oxford College Campus,14236,0,0,0,,,0,,,1,0,3,0,0
+2012,139658,Emory University,3,Emory University Hospital Midtown Campus,14236,0,0,1,,,0,,,0,1,0,0,0
+2012,139658,Emory University,4,Carter Center Campus,14236,0,0,0,,,0,,,0,0,0,1,0
+2012,139658,Emory University,5,Emory University Grady Area Campus,14236,0,0,0,,,0,,,0,0,0,0,0
+2012,139658,Emory University,6,Emory Johns Creek Hospital Campus,14236,0,0,0,,,0,,,0,0,0,0,0
+2012,139658,Emory University,7,Emory Saint Joseph's Hospital Campus,14236,0,0,0,,,0,,,1,0,0,1,0
+2013,139658,Emory University,1,Main Campus,14513,0,0,22,,,0,,,0,3,21,5,0
+2013,139658,Emory University,2,Oxford College Campus,14513,0,0,0,,,0,,,0,0,4,1,2
+2013,139658,Emory University,3,Emory University Hospital Midtown Campus,14513,0,0,1,,,0,,,0,0,0,0,0
+2013,139658,Emory University,4,Carter Center Campus,14513,0,0,0,,,0,,,0,0,0,0,0
+2013,139658,Emory University,5,Emory University Grady Area Campus,14513,0,0,0,,,0,,,0,0,0,0,0
+2013,139658,Emory University,6,Emory Johns Creek Hospital Campus,14513,0,0,0,,,0,,,0,0,0,0,0
+2013,139658,Emory University,7,Emory Saint Joseph's Hospital Campus,14513,0,0,0,,,0,,,0,0,1,1,0
+2014,139658,Emory University,1,Main Campus,14769,0,0,,25,7,,0,0,0,1,19,14,0
+2014,139658,Emory University,2,Oxford College Campus,14769,0,0,,1,2,,0,0,0,0,3,1,0
+2014,139658,Emory University,3,Emory University Hospital Midtown Campus,14769,0,0,,2,0,,0,0,0,2,0,4,0
+2014,139658,Emory University,4,Carter Center Campus,14769,0,0,,0,0,,0,0,0,0,0,1,0
+2014,139658,Emory University,5,Emory University Grady Area Campus,14769,0,0,,0,0,,0,0,0,0,1,0,0
+2014,139658,Emory University,6,Emory Johns Creek Hospital Campus,14769,0,0,,0,0,,0,0,0,0,0,0,0
+2014,139658,Emory University,7,Emory Saint Joseph's Hospital Campus,14769,0,0,,0,0,,0,0,0,0,0,0,0

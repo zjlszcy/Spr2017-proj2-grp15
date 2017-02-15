@@ -12,15 +12,20 @@ output: html_notebook
 crimes <- read.csv("../data/OPE CSS Custom Data 2017-02-12 134856/Criminal_Offenses_On_campus.csv")
 for(i in 6:19){
   as.numeric(crimes[,i])
-} #convert integer to numberic
+} 
 ```
 
-##trend
+##total crimes trend and every types of crimes trend
 ```{r}
-crimes$total <- rowSums(crimes[,-c(1:6)],na.rm = TRUE) #sum of all types of crimes for each institution
+##calculate total crimes for every year
+crimes$total <- rowSums(crimes[,-c(1:6)],na.rm = TRUE)
 crimes.split <- split(crimes, f = as.factor(crimes$Survey.year))
 year.sum <- NA
 for(i in 1: length(crimes.split)){
  year.sum[i] <- sum(crimes.split[[i]]$total) 
-} #calculate total crimes of every year
+} 
+
+#calculate every type of crimes for every year
+agg <- aggregate(crimes[,-c(1:6)], list(crimes$Survey.year), sum)
 ```
+

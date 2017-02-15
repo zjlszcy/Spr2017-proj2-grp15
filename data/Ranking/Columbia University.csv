@@ -1,0 +1,29 @@
+Survey year,Unitid,Institution name,Campus ID, Campus Name,Institution Size,Murder/Non-negligent manslaughter,Negligent manslaughter,Sex offenses - Forcible,Rape,Fondling,Sex offenses - Non-forcible,Incest,Statutory rape,Robbery,Aggravated assault,Burglary,Motor vehicle theft,Arson
+2001,190150,Columbia University in the City of New York,1,Morningside Campus,19710,0,0,1,,,0,,,0,4,9,1,0
+2001,190150,Columbia University in the City of New York,2,Columbia University Medical Center,19710,0,0,0,,,0,,,1,0,1,0,0
+2002,190150,Columbia University in the City of New York,1,Morningside Campus,20583,0,0,6,,,0,,,10,4,25,1,0
+2002,190150,Columbia University in the City of New York,2,Columbia University Medical Center,20583,0,0,0,,,0,,,0,1,2,0,0
+2003,190150,Columbia University in the City of New York,1,Morningside Campus,21322,0,0,6,,,0,,,8,1,28,0,0
+2003,190150,Columbia University in the City of New York,2,Columbia University Medical Center,21322,0,0,0,,,0,,,0,0,3,0,0
+2004,190150,Columbia University in the City of New York,1,Morningside Campus,21648,0,0,3,,,0,,,4,6,113,0,1
+2004,190150,Columbia University in the City of New York,2,Columbia University Medical Center,21648,0,0,0,,,0,,,0,0,21,0,0
+2005,190150,Columbia University in the City of New York,1,Morningside Campus,21983,0,0,6,,,0,,,4,7,131,0,1
+2005,190150,Columbia University in the City of New York,2,Columbia University Medical Center,21983,0,0,1,,,0,,,0,2,30,0,0
+2006,190150,Columbia University in the City of New York,1,Morningside Campus,22317,0,0,5,,,0,,,3,8,132,0,2
+2006,190150,Columbia University in the City of New York,2,Columbia University Medical Center,22317,0,0,1,,,0,,,1,3,32,0,0
+2007,190150,Columbia University in the City of New York,1,Morningside Campus,22655,0,0,8,,,0,,,1,9,112,0,0
+2007,190150,Columbia University in the City of New York,2,Columbia University Medical Center,22655,0,0,0,,,0,,,0,6,38,0,0
+2008,190150,Columbia University in the City of New York,1,Morningside Campus,23196,0,0,5,,,0,,,6,5,87,0,0
+2008,190150,Columbia University in the City of New York,2,Columbia University Medical Center,23196,0,0,0,,,0,,,0,4,37,0,0
+2009,190150,Columbia University in the City of New York,1,Morningside Campus,24230,0,0,14,,,0,,,4,3,49,0,0
+2009,190150,Columbia University in the City of New York,2,Columbia University Medical Center,24230,0,0,1,,,0,,,0,0,7,0,0
+2010,190150,Columbia University in the City of New York,1,Morningside Campus,25208,0,0,4,,,1,,,0,1,26,0,1
+2010,190150,Columbia University in the City of New York,2,Columbia University Medical Center,25208,0,0,0,,,0,,,0,0,2,0,0
+2011,190150,Columbia University in the City of New York,1,Morningside Campus,26050,0,0,3,,,0,,,1,4,24,0,1
+2011,190150,Columbia University in the City of New York,2,Columbia University Medical Center,26050,0,0,1,,,0,,,0,0,1,0,0
+2012,190150,Columbia University in the City of New York,1,Morningside Campus,26471,0,0,12,,,0,,,1,3,27,0,1
+2012,190150,Columbia University in the City of New York,2,Columbia University Medical Center,26471,0,0,2,,,0,,,0,0,1,0,0
+2013,190150,Columbia University in the City of New York,1,Morningside Campus,26957,0,0,21,,,0,,,3,0,15,0,0
+2013,190150,Columbia University in the City of New York,2,Columbia University Medical Center,26957,0,0,1,,,0,,,0,0,4,0,0
+2014,190150,Columbia University in the City of New York,1,Morningside Campus,27589,0,0,,16,6,,0,0,1,3,18,0,0
+2014,190150,Columbia University in the City of New York,2,Columbia University Medical Center,27589,0,0,,3,2,,0,0,0,0,0,0,0

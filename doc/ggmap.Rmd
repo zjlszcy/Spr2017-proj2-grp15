@@ -21,6 +21,7 @@ coordinate_1 <- geocode(campus_1) # chenyun
 coordinate_2 <- geocode(campus_2) # nanjun
 coordinate_3 <- geocode(campus_3) # yuxin
 
+write.csv(coordinate_3,file="test3.csv")
 # which(is.na(coordinate)) some of them are NA
 
 ## Get U.S. Map

@@ -174,55 +174,50 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShzaGlueSlcbmxpYnJhcnkoZ2dwbG90MilcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShzaGlueSlcbmxpYnJhcnkoZ2dwbG90MilcbnVpIDwtIGZsdWlkUGFnZShcbiAgdGl0bGUgPSAnQ29tcGFyZSBEYXRhIGZvciBNdWx0aXBsZSBTY2hvb2xzJyxcbiAgc2lkZWJhckxheW91dChcbiAgICBzaWRlYmFyUGFuZWwoXG4gICAgICBjb25kaXRpb25hbFBhbmVsKFxuICAgICAgICAnaW5wdXQuZGF0YXNldCA9PSBcInQuc2Nob29sczIwMTRcIicsXG4gICAgICAgIGNoZWNrYm94R3JvdXBJbnB1dCgnc2hvd19zY2hvb2xzJywgJ1NjaG9vbHMgdG8gY29tcGFyZTonLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgY29sbmFtZXModC5zY2hvb2xzMjAxNCksIHNlbGVjdGVkID0gY29sbmFtZXModC5zY2hvb2xzMjAxNCkpXG4gICAgICApXG4gICAgKSxcbiAgICBtYWluUGFuZWwoXG4gICAgICB0YWJzZXRQYW5lbChcbiAgICAgICAgaWQgPSAnU2Nob29scycsXG4gICAgICAgIHRhYlBhbmVsKCdUb3AgMzAgU2Nob29scycsIERUOjpkYXRhVGFibGVPdXRwdXQoJ215dGFibGUnKSxcbiAgICAgICAgICAgICAgICAgcGxvdE91dHB1dCgnYmFyY2hhcnQnKSlcbiAgICAgIClcbiAgICApXG4gIClcbilcbnNlcnZlciA8LSBmdW5jdGlvbihpbnB1dCwgb3V0cHV0KSB7XG4gXG4gICMgY2hvb3NlIGNvbHVtbnMgdG8gZGlzcGxheVxuICBzY2hvb2wgPC0gdC5zY2hvb2xzMjAxNFxuICBvdXRwdXQkbXl0YWJsZSA8LSBEVDo6cmVuZGVyRGF0YVRhYmxlKHtcbiAgICBEVDo6ZGF0YXRhYmxlKHNjaG9vbFssIGlucHV0JHNob3dfc2Nob29sc10sIG9wdGlvbnMgPSBsaXN0KHBhZ2VMZW5ndGggPSAyNSkpXG4gIH0pXG4gIFxuICBvdXRwdXQkYmFyY2hhcnQgPSByZW5kZXJQbG90KHtcbiAgICBzID0gaW5wdXQkbXl0YWJsZV9yb3dzX3NlbGVjdGVkXG4gICAgYmFycGxvdChzKVxuICB9KVxufVxuc2hpbnlBcHAodWkgPSB1aSwgc2VydmVyID0gc2VydmVyKVxuYGBgIn0= -->
 <pre class="r"><code>library(shiny)
-library(ggplot2)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYZ2dwbG90MuKAmVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdCBpcyBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOk5MUOKAmTpcblxuICAgIGFubm90YXRlXG4ifQ== -->
-<pre><code>
-Attaching package: ‘ggplot2’
-
-The following object is masked from ‘package:NLP’:
-
-    annotate</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudWkgPC0gZmx1aWRQYWdlKFxuICB0aXRsZVBhbmVsKFwiQ29tcGFyZSBEYXRhIGZvciBUd28gU2Nob29sc1wiKSxcbiAgIyBDcmVhdGUgYSBuZXcgUm93IGluIHRoZSBVSSBmb3Igc2VsZWN0SW5wdXRzXG4gIGZsdWlkUm93KFxuICAgIGNvbHVtbig0LFxuICAgICAgICBzZWxlY3RJbnB1dChcInNjaG9vbFwiLFxuICAgICAgICAgICAgICAgICAgICBcIlNjaG9vbDpcIixcbiAgICAgICAgICAgICAgICAgICAgYyhcIkFsbFwiLFxuICAgICAgICAgICAgICAgICAgICAgIHVuaXF1ZShhcy5jaGFyYWN0ZXIoc2Nob29sczIwMTQkR3JvdXAuMikpKSlcbiAgICApXG4gICAgXG4gICksXG4gICMgQ3JlYXRlIGEgbmV3IHJvdyBmb3IgdGhlIHRhYmxlLlxuICBmbHVpZFJvdyhcbiAgICBEVDo6ZGF0YVRhYmxlT3V0cHV0KFwidGFibGVcIilcbiAgKVxuKVxuc2VydmVyIDwtIGZ1bmN0aW9uKGlucHV0LCBvdXRwdXQpIHtcbiAgIyBGaWx0ZXIgZGF0YSBiYXNlZCBvbiBzZWxlY3Rpb25zXG4gIG91dHB1dCR0YWJsZSA8LSBEVDo6cmVuZGVyRGF0YVRhYmxlKERUOjpkYXRhdGFibGUoe1xuICAgIGRhdGEgPC0gc2Nob29sczIwMTRcbiAgICBpZiAoaW5wdXQkc2Nob29sICE9IFwiQWxsXCIpIHtcbiAgICAgIGRhdGEgPC0gZGF0YVtkYXRhJEdyb3VwLjIgPT0gaW5wdXQkc2Nob29sLF1cbiAgICB9XG4gICAgZGF0YVxuICB9KSlcbn1cbnNoaW55QXBwKHVpID0gdWksIHNlcnZlciA9IHNlcnZlcilcbmBgYCJ9 -->
-<pre class="r"><code>ui &lt;- fluidPage(
-  titlePanel(&quot;Compare Data for Two Schools&quot;),
-  # Create a new Row in the UI for selectInputs
-  fluidRow(
-    column(4,
-        selectInput(&quot;school&quot;,
-                    &quot;School:&quot;,
-                    c(&quot;All&quot;,
-                      unique(as.character(schools2014$Group.2))))
+library(ggplot2)
+ui &lt;- fluidPage(
+  title = 'Compare Data for Multiple Schools',
+  sidebarLayout(
+    sidebarPanel(
+      conditionalPanel(
+        'input.dataset == &quot;t.schools2014&quot;',
+        checkboxGroupInput('show_schools', 'Schools to compare:',
+                           colnames(t.schools2014), selected = colnames(t.schools2014))
+      )
+    ),
+    mainPanel(
+      tabsetPanel(
+        id = 'Schools',
+        tabPanel('Top 30 Schools', DT::dataTableOutput('mytable'),
+                 plotOutput('barchart'))
+      )
     )
-    
-  ),
-  # Create a new row for the table.
-  fluidRow(
-    DT::dataTableOutput(&quot;table&quot;)
   )
 )
 server &lt;- function(input, output) {
-  # Filter data based on selections
-  output$table &lt;- DT::renderDataTable(DT::datatable({
-    data &lt;- schools2014
-    if (input$school != &quot;All&quot;) {
-      data &lt;- data[data$Group.2 == input$school,]
-    }
-    data
-  }))
+ 
+  # choose columns to display
+  school &lt;- t.schools2014
+  output$mytable &lt;- DT::renderDataTable({
+    DT::datatable(school[, input$show_schools], options = list(pageLength = 25))
+  })
+  
+  output$barchart = renderPlot({
+    s = input$mytable_rows_selected
+    barplot(s)
+  })
 }
 shinyApp(ui = ui, server = server)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5MaXN0ZW5pbmcgb24gaHR0cDovLzEyNy4wLjAuMTo1MTA4XG4ifQ== -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5MaXN0ZW5pbmcgb24gaHR0cDovLzEyNy4wLjAuMTozNTE3XG4ifQ== -->
 <pre><code>
-Listening on http://127.0.0.1:5108</code></pre>
+Listening on http://127.0.0.1:3517</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KbGlicmFyeShzaGlueSkKbGlicmFyeShnZ3Bsb3QyKQoKdWkgPC0gZmx1aWRQYWdlKAogIHRpdGxlUGFuZWwoIkNvbXBhcmUgRGF0YSBmb3IgVHdvIFNjaG9vbHMiKSwKCiAgIyBDcmVhdGUgYSBuZXcgUm93IGluIHRoZSBVSSBmb3Igc2VsZWN0SW5wdXRzCiAgZmx1aWRSb3coCiAgICBjb2x1bW4oNCwKICAgICAgICBzZWxlY3RJbnB1dCgic2Nob29sIiwKICAgICAgICAgICAgICAgICAgICAiU2Nob29sOiIsCiAgICAgICAgICAgICAgICAgICAgYygiQWxsIiwKICAgICAgICAgICAgICAgICAgICAgIHVuaXF1ZShhcy5jaGFyYWN0ZXIoc2Nob29sczIwMTQkR3JvdXAuMikpKSkKICAgICkKICAgIAogICksCiAgIyBDcmVhdGUgYSBuZXcgcm93IGZvciB0aGUgdGFibGUuCiAgZmx1aWRSb3coCiAgICBEVDo6ZGF0YVRhYmxlT3V0cHV0KCJ0YWJsZSIpCiAgKQopCgpzZXJ2ZXIgPC0gZnVuY3Rpb24oaW5wdXQsIG91dHB1dCkgewoKICAjIEZpbHRlciBkYXRhIGJhc2VkIG9uIHNlbGVjdGlvbnMKICBvdXRwdXQkdGFibGUgPC0gRFQ6OnJlbmRlckRhdGFUYWJsZShEVDo6ZGF0YXRhYmxlKHsKICAgIGRhdGEgPC0gc2Nob29sczIwMTQKICAgIGlmIChpbnB1dCRzY2hvb2wgIT0gIkFsbCIpIHsKICAgICAgZGF0YSA8LSBkYXRhW2RhdGEkR3JvdXAuMiA9PSBpbnB1dCRzY2hvb2wsXQogICAgfQogICAgZGF0YQogIH0pKQoKfQoKc2hpbnlBcHAodWkgPSB1aSwgc2VydmVyID0gc2VydmVyKQpgYGA=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KbGlicmFyeShzaGlueSkKbGlicmFyeShnZ3Bsb3QyKQoKdWkgPC0gZmx1aWRQYWdlKAogIHRpdGxlID0gJ0NvbXBhcmUgRGF0YSBmb3IgTXVsdGlwbGUgU2Nob29scycsCiAgc2lkZWJhckxheW91dCgKICAgIHNpZGViYXJQYW5lbCgKICAgICAgY29uZGl0aW9uYWxQYW5lbCgKICAgICAgICAnaW5wdXQuZGF0YXNldCA9PSAidC5zY2hvb2xzMjAxNCInLAogICAgICAgIGNoZWNrYm94R3JvdXBJbnB1dCgnc2hvd19zY2hvb2xzJywgJ1NjaG9vbHMgdG8gY29tcGFyZTonLAogICAgICAgICAgICAgICAgICAgICAgICAgICBjb2xuYW1lcyh0LnNjaG9vbHMyMDE0KSwgc2VsZWN0ZWQgPSBjb2xuYW1lcyh0LnNjaG9vbHMyMDE0KSkKICAgICAgKQogICAgKSwKICAgIG1haW5QYW5lbCgKICAgICAgdGFic2V0UGFuZWwoCiAgICAgICAgaWQgPSAnU2Nob29scycsCiAgICAgICAgdGFiUGFuZWwoJ1RvcCAzMCBTY2hvb2xzJywgRFQ6OmRhdGFUYWJsZU91dHB1dCgnbXl0YWJsZScpLAogICAgICAgICAgICAgICAgIHBsb3RPdXRwdXQoJ2JhcmNoYXJ0JykpCiAgICAgICkKICAgICkKICApCikKCnNlcnZlciA8LSBmdW5jdGlvbihpbnB1dCwgb3V0cHV0KSB7CiAKICAjIGNob29zZSBjb2x1bW5zIHRvIGRpc3BsYXkKICBzY2hvb2wgPC0gdC5zY2hvb2xzMjAxNAogIG91dHB1dCRteXRhYmxlIDwtIERUOjpyZW5kZXJEYXRhVGFibGUoewogICAgRFQ6OmRhdGF0YWJsZShzY2hvb2xbLCBpbnB1dCRzaG93X3NjaG9vbHNdLCBvcHRpb25zID0gbGlzdChwYWdlTGVuZ3RoID0gMjUpKQogIH0pCiAgCiAgb3V0cHV0JGJhcmNoYXJ0ID0gcmVuZGVyUGxvdCh7CiAgICBzID0gaW5wdXQkbXl0YWJsZV9yb3dzX3NlbGVjdGVkCiAgICBiYXJwbG90KHMpCiAgfSkKfQoKc2hpbnlBcHAodWkgPSB1aSwgc2VydmVyID0gc2VydmVyKQpgYGA=</div>
 
 
 

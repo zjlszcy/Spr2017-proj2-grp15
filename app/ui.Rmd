@@ -7,35 +7,37 @@ library(shiny)
 library(ggplot2)
 
 ui <- fluidPage(
-  titlePanel("Compare Data for Two Schools"),
-
-  # Create a new Row in the UI for selectInputs
-  fluidRow(
-    column(4,
-        selectInput("school",
-                    "School:",
-                    c("All",
-                      unique(as.character(schools2014$Group.2))))
+  title = 'Compare Data for Multiple Schools',
+  sidebarLayout(
+    sidebarPanel(
+      conditionalPanel(
+        'input.dataset == "t.schools2014"',
+        checkboxGroupInput('show_schools', 'Schools to compare:',
+                           colnames(t.schools2014), selected = colnames(t.schools2014))
+      )
+    ),
+    mainPanel(
+      tabsetPanel(
+        id = 'Schools',
+        tabPanel('Top 30 Schools', DT::dataTableOutput('mytable'),
+                 plotOutput('barchart'))
+      )
     )
-    
-  ),
-  # Create a new row for the table.
-  fluidRow(
-    DT::dataTableOutput("table")
   )
 )
 
 server <- function(input, output) {
-
-  # Filter data based on selections
-  output$table <- DT::renderDataTable(DT::datatable({
-    data <- schools2014
-    if (input$school != "All") {
-      data <- data[data$Group.2 == input$school,]
-    }
-    data
-  }))
-
+ 
+  # choose columns to display
+  school <- t.schools2014
+  output$mytable <- DT::renderDataTable({
+    DT::datatable(school[, input$show_schools], options = list(pageLength = 25))
+  })
+  
+  output$barchart = renderPlot({
+    s = input$mytable_rows_selected
+    barplot(s)
+  })
 }
 
 shinyApp(ui = ui, server = server)

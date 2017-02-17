@@ -1,0 +1,62 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+library(shiny)
+
+#################################### Schools Comparision ##############################################
+ui <- fluidPage(
+  titlePanel( 'Compare Data for Multiple Schools'),
+  sidebarLayout(
+    sidebarPanel(
+        checkboxGroupInput(inputId = 'show_schools', 
+                           label = 'Schools to compare:',
+                           choices = as.character(colnames(t.schools2014)), 
+                           selected = as.character(colnames(t.schools2014)[c(1,2)]), 
+                           width = "200px"
+      )
+    ),
+    mainPanel(
+      tabsetPanel(
+        id = 'criminal.offenses',
+        tabPanel('Criminal Offenses', DT::dataTableOutput('mytable')))
+      )
+    )
+  )
+
+server <- function(input, output) {
+ 
+  # choose columns to display
+  school <- t.schools2014
+  output$mytable <- DT::renderDataTable({
+    DT::datatable(school[, input$show_schools, drop = FALSE], 
+                  extensions = 'Buttons', 
+                  options = list(pageLength = 25, dom = 'Bfrtip', buttons = I('colvis')),
+                  class = "display")
+  })
+  
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+```{r}
+###################################### Trend ######################################################
+ui <- fluidPage(
+  tabsetPanel(
+    #tab 1 for total crimes trend from 2001 to 2014
+    tabPanel('Total Crimes Trend', plotlyOutput("total.trend")),
+    tabPanel('Type Trend', plotlyOutput("type.trend"))
+  )
+)
+
+server <- function(input, output){
+  
+  output$total.trend <- renderPlotly({
+    plot_ly(agg, x = c(2001:2014), y = agg$total)
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```

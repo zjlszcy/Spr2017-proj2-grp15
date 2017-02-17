@@ -6,6 +6,8 @@ output: html_notebook
 ```{r}
 library(shiny)
 library(shinydashboard)
+library(DT)
+library(plotly)
 
 ui <- dashboardPage(
   dashboardHeader(
@@ -79,7 +81,7 @@ server <- function(input, output) {
       
     })
      output$total.trend <- renderPlotly({
-    plot_ly(agg, x = c(2001:2014), y = agg$total)
+    plot_ly(agg, x = c(2001:2014), y = agg$total, mode = "lines")
   })
   
 }

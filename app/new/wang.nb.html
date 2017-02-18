@@ -142,7 +142,7 @@ $(document).ready(function () {
 </style>
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("ui.Rmd");
+  window.initializeSourceEmbed("wang.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
@@ -174,96 +174,130 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShzaGlueSlcbmxpYnJhcnkoc2hpbnlkYXNoYm9hcmQpXG5saWJyYXJ5KERUKVxubGlicmFyeShwbG90bHkpXG51aSA8LSBkYXNoYm9hcmRQYWdlKFxuICBkYXNoYm9hcmRIZWFkZXIoXG4gICAgdGl0bGUgPSBcIkFCQ1wiXG4gICksXG4gIFxuICBkYXNoYm9hcmRTaWRlYmFyKFxuICAgIHNpZGViYXJNZW51KFxuICAgIG1lbnVJdGVtKFwiQVwiLCB0YWJOYW1lID0gXCJBXCIsIGljb24gPSBpY29uKFwiZGFzaGJvYXJkXCIpKSxcbiAgICBtZW51SXRlbShcIkJcIiwgdGFiTmFtZSA9IFwiQlwiLGljb24gPSBpY29uKFwiY29nXCIpLCBcbiAgICAgICAgICAgICBiYWRnZUxhYmVsID0gXCJuZXdcIiwgYmFkZ2VDb2xvciA9IFwiZ3JlZW5cIiksXG4gICAgbWVudUl0ZW0oXCJDXCIsIHRhYk5hbWUgPSBcIkNcIiwgaWNvbiA9IGljb24oXCJjb2dcIikpLFxuICAgIG1lbnVJdGVtKFwiRFwiLCB0YWJOYW1lID0gXCJEXCIsIGljb24gPSBpY29uKFwicmVmcmVzaFwiKSksXG4gICAgbWVudUl0ZW0oXCJFXCIsIHRhYk5hbWUgPSBcIkVcIiwgaWNvbiA9IGljb24oXCJyZWZyZXNoXCIpKSlcbiAgKSxcbiAgXG4gIGRhc2hib2FyZEJvZHkoXG4gICAgdGFiSXRlbXMoXG4gICAgdGFiSXRlbSh0YWJOYW1lID0gXCJBXCIsXG4gICAgICBoMihcIkEgdGFiIGNvbnRlbnRcIiksXG4gICAgICBmbHVpZFBhZ2UoXG4gICAgICAgIHRpdGxlUGFuZWwoICdDb21wYXJlIERhdGEgZm9yIE11bHRpcGxlIFNjaG9vbHMnKSxcbiAgICAgICAgICBzaWRlYmFyTGF5b3V0KFxuICAgICAgICAgICAgc2lkZWJhclBhbmVsKFxuICAgICAgICAgICAgICBjaGVja2JveEdyb3VwSW5wdXQoaW5wdXRJZCA9ICdzaG93X3NjaG9vbHMnLCBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbGFiZWwgPSAnU2Nob29scyB0byBjb21wYXJlOicsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNob2ljZXMgPSBhcy5jaGFyYWN0ZXIoY29sbmFtZXModC5zY2hvb2xzMjAxNCkpLCBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc2VsZWN0ZWQgPSBhcy5jaGFyYWN0ZXIoY29sbmFtZXModC5zY2hvb2xzMjAxNClbYygxLDIpXSksIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHdpZHRoID0gXCIyMDBweFwiKVxuICAgICAgICAgICAgKSxcbiAgICAgICAgIG1haW5QYW5lbChcbiAgICAgICAgICAgIHRhYnNldFBhbmVsKFxuICAgICAgICAgICAgICAgIGlkID0gJ2NyaW1pbmFsLm9mZmVuc2VzJyxcbiAgICAgICAgICAgICAgICB0YWJQYW5lbCgnQ3JpbWluYWwgT2ZmZW5zZXMnLCBEVDo6ZGF0YVRhYmxlT3V0cHV0KCdjcmltaW5hbC5vZmZlbnNlcycpKSlcbiAgICAgICkpKVxuICAgICksXG4gICAgdGFiSXRlbSh0YWJOYW1lID0gXCJCXCIsXG4gICAgICBoMihcIkIgdGFiIGNvbnRlbnRcIiksXG4gICAgICBmbHVpZFBhZ2UoXG4gICAgICAgIHRhYnNldFBhbmVsKFxuICAgICAgICAgIHRhYlBhbmVsKCdUb3RhbCBDcmltZXMgVHJlbmQnLCBwbG90bHlPdXRwdXQoXCJ0b3RhbC50cmVuZFwiKSksXG4gICAgICAgICAgdGFiUGFuZWwoJ1R5cGUgVHJlbmQnLCBwbG90bHlPdXRwdXQoXCJ0eXBlLnRyZW5kXCIpKSlcbiAgICAgIClcbiAgICApLFxuICAgIFxuICAgIHRhYkl0ZW0odGFiTmFtZSA9IFwiQ1wiLFxuICAgICAgaDIoXCJDIHRhYiBjb250ZW50XCIpXG4gICAgKSxcbiAgICBcbiAgICB0YWJJdGVtKHRhYk5hbWUgPSBcIkRcIixcbiAgICAgIGgyKFwiRCB0YWIgY29udGVudFwiKVxuICAgICksXG4gICAgXG4gICAgdGFiSXRlbSh0YWJOYW1lID0gXCJFXCIsXG4gICAgICBoMihcIkUgdGFiIGNvbnRlbnRcIilcbiAgICApXG4gICAgXG4gIClcbiAgKVxuKVxuc2VydmVyIDwtIGZ1bmN0aW9uKGlucHV0LCBvdXRwdXQpIHtcbiAgIHNjaG9vbCA8LSB0LnNjaG9vbHMyMDE0XG4gICAgb3V0cHV0JGNyaW1pbmFsLm9mZmVuc2VzIDwtIERUOjpyZW5kZXJEYXRhVGFibGUoe1xuICAgIERUOjpkYXRhdGFibGUoc2Nob29sWywgaW5wdXQkc2hvd19zY2hvb2xzLCBkcm9wID0gRkFMU0VdLCBcbiAgICAgICAgICAgICAgICAgIGV4dGVuc2lvbnMgPSAnQnV0dG9ucycsIFxuICAgICAgICAgICAgICAgICAgb3B0aW9ucyA9IGxpc3QocGFnZUxlbmd0aCA9IDI1LCBkb20gPSAnQmZydGlwJywgYnV0dG9ucyA9IEkoJ2NvbHZpcycpKSxcbiAgICAgICAgICAgICAgICAgIGNsYXNzID0gXCJkaXNwbGF5XCIpXG4gICAgICBcbiAgICB9KVxuICAgICBvdXRwdXQkdG90YWwudHJlbmQgPC0gcmVuZGVyUGxvdGx5KHtcbiAgICBwbG90X2x5KGFnZywgeCA9IGMoMjAwMToyMDE0KSwgeSA9IGFnZyR0b3RhbCwgbW9kZSA9IFwibGluZXNcIilcbiAgfSlcbiAgXG59XG5zaGlueUFwcCh1aSwgc2VydmVyKVxuYGBgIn0= -->
-<pre class="r"><code>library(shiny)
-library(shinydashboard)
-library(DT)
-library(plotly)
-ui &lt;- dashboardPage(
-  dashboardHeader(
-    title = &quot;ABC&quot;
-  ),
-  
-  dashboardSidebar(
-    sidebarMenu(
-    menuItem(&quot;A&quot;, tabName = &quot;A&quot;, icon = icon(&quot;dashboard&quot;)),
-    menuItem(&quot;B&quot;, tabName = &quot;B&quot;,icon = icon(&quot;cog&quot;), 
-             badgeLabel = &quot;new&quot;, badgeColor = &quot;green&quot;),
-    menuItem(&quot;C&quot;, tabName = &quot;C&quot;, icon = icon(&quot;cog&quot;)),
-    menuItem(&quot;D&quot;, tabName = &quot;D&quot;, icon = icon(&quot;refresh&quot;)),
-    menuItem(&quot;E&quot;, tabName = &quot;E&quot;, icon = icon(&quot;refresh&quot;)))
-  ),
-  
-  dashboardBody(
-    tabItems(
-    tabItem(tabName = &quot;A&quot;,
-      h2(&quot;A tab content&quot;),
-      fluidPage(
-        titlePanel( 'Compare Data for Multiple Schools'),
-          sidebarLayout(
-            sidebarPanel(
-              checkboxGroupInput(inputId = 'show_schools', 
-                                label = 'Schools to compare:',
-                                choices = as.character(colnames(t.schools2014)), 
-                                selected = as.character(colnames(t.schools2014)[c(1,2)]), 
-                                  width = &quot;200px&quot;)
-            ),
-         mainPanel(
-            tabsetPanel(
-                id = 'criminal.offenses',
-                tabPanel('Criminal Offenses', DT::dataTableOutput('criminal.offenses')))
-      )))
-    ),
-    tabItem(tabName = &quot;B&quot;,
-      h2(&quot;B tab content&quot;),
-      fluidPage(
-        tabsetPanel(
-          tabPanel('Total Crimes Trend', plotlyOutput(&quot;total.trend&quot;)),
-          tabPanel('Type Trend', plotlyOutput(&quot;type.trend&quot;)))
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShzaGlueSlcbmBgYCJ9 -->
+<pre class="r"><code>library(shiny)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSDigJhzaGlueeKAmSB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDMuMy4yXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYc2hpbnnigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOkRU4oCZOlxuXG4gICAgZGF0YVRhYmxlT3V0cHV0LCByZW5kZXJEYXRhVGFibGVcbiJ9 -->
+<pre><code>package ‘shiny’ was built under R version 3.3.2
+Attaching package: ‘shiny’
+
+The following objects are masked from ‘package:DT’:
+
+    dataTableOutput, renderDataTable</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwbG90bHkpXG5gYGAifQ== -->
+<pre class="r"><code>library(plotly)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSDigJhwbG90bHnigJkgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiAzLjMuMkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogZ2dwbG90MlxuXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYcGxvdGx54oCZXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0IGlzIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6Z2dwbG90MuKAmTpcblxuICAgIGxhc3RfcGxvdFxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6cGx5cuKAmTpcblxuICAgIGFycmFuZ2UsIG11dGF0ZSwgcmVuYW1lLCBzdW1tYXJpc2VcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTpzdGF0c+KAmTpcblxuICAgIGZpbHRlclxuXG5UaGUgZm9sbG93aW5nIG9iamVjdCBpcyBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOmdyYXBoaWNz4oCZOlxuXG4gICAgbGF5b3V0XG4ifQ== -->
+<pre><code>package ‘plotly’ was built under R version 3.3.2Loading required package: ggplot2
+
+Attaching package: ‘plotly’
+
+The following object is masked from ‘package:ggplot2’:
+
+    last_plot
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, mutate, rename, summarise
+
+The following object is masked from ‘package:stats’:
+
+    filter
+
+The following object is masked from ‘package:graphics’:
+
+    layout</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIFNjaG9vbHMgQ29tcGFyaXNpb24gIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjI1xudWkgPC0gZmx1aWRQYWdlKFxuICB0aXRsZVBhbmVsKCAnQ29tcGFyZSBEYXRhIGZvciBNdWx0aXBsZSBTY2hvb2xzJyksXG4gIHNpZGViYXJMYXlvdXQoXG4gICAgc2lkZWJhclBhbmVsKFxuICAgICAgICBjaGVja2JveEdyb3VwSW5wdXQoaW5wdXRJZCA9ICdzaG93X3NjaG9vbHMnLCBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIGxhYmVsID0gJ1NjaG9vbHMgdG8gY29tcGFyZTonLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgY2hvaWNlcyA9IGFzLmNoYXJhY3Rlcihjb2xuYW1lcyh0LnNjaG9vbHMyMDE0KSksIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgc2VsZWN0ZWQgPSBhcy5jaGFyYWN0ZXIoY29sbmFtZXModC5zY2hvb2xzMjAxNClbYygxLDIpXSksIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgd2lkdGggPSBcIjIwMHB4XCJcbiAgICAgIClcbiAgICApLFxuICAgIG1haW5QYW5lbChcbiAgICAgIHRhYnNldFBhbmVsKFxuICAgICAgICBpZCA9ICdjcmltaW5hbC5vZmZlbnNlcycsXG4gICAgICAgIHRhYlBhbmVsKCdDcmltaW5hbCBPZmZlbnNlcycsIFxuICAgICAgICAgICAgICAgICBEVDo6ZGF0YVRhYmxlT3V0cHV0KCdjcmltaW5hbC5vZmZlbnNlcycpLFxuICAgICAgICAgICAgICAgICBwbG90bHlPdXRwdXQoXCJyYXRlLmJhclwiKSkpXG4gICAgICApXG4gICAgKVxuICApXG5zZXJ2ZXIgPC0gZnVuY3Rpb24oaW5wdXQsIG91dHB1dCkge1xuICBcbiAgc2Nob29scy5zZWxlY3RlZCA8LSByZWFjdGl2ZSh7aW5wdXQkc2hvd19zY2hvb2xzfSlcbiAgXG4gICMgY2hvb3NlIGNvbHVtbnMgdG8gZGlzcGxheVxuICBzY2hvb2wgPC0gdC5zY2hvb2xzMjAxNFxuICBvdXRwdXQkY3JpbWluYWwub2ZmZW5zZXMgPC0gRFQ6OnJlbmRlckRhdGFUYWJsZSh7XG4gICAgRFQ6OmRhdGF0YWJsZShzY2hvb2xbLCBzY2hvb2xzLnNlbGVjdGVkLCBkcm9wID0gRkFMU0VdLCBcbiAgICAgICAgICAgICAgICAgIGV4dGVuc2lvbnMgPSAnQnV0dG9ucycsIFxuICAgICAgICAgICAgICAgICAgb3B0aW9ucyA9IGxpc3QocGFnZUxlbmd0aCA9IDI1LCBkb20gPSAnQmZydGlwJywgYnV0dG9ucyA9IEkoJ2NvbHZpcycpKSxcbiAgICAgICAgICAgICAgICAgIGNsYXNzID0gXCJkaXNwbGF5XCIpXG4gICAgXG4gIGNvbC5zY2hvb2wgPC0gc2Nob29sWywgc2Nob29scy5zZWxlY3RlZCwgZHJvcCA9IEZBTFNFXVxuICBvdXRwdXQkcmF0ZS5iYXIgPC0gcGxvdF9seShjb2wuc2Nob29sW2xlbmd0aChjb2wuc2Nob29sKSxdLCBtb2RlID0gXCJiYXJcIilcbiAgfSlcbiAgXG59XG5zaGlueUFwcCh1aSA9IHVpLCBzZXJ2ZXIgPSBzZXJ2ZXIpXG5gYGAifQ== -->
+<pre class="r"><code>#################################### Schools Comparision ##############################################
+ui &lt;- fluidPage(
+  titlePanel( 'Compare Data for Multiple Schools'),
+  sidebarLayout(
+    sidebarPanel(
+        checkboxGroupInput(inputId = 'show_schools', 
+                           label = 'Schools to compare:',
+                           choices = as.character(colnames(t.schools2014)), 
+                           selected = as.character(colnames(t.schools2014)[c(1,2)]), 
+                           width = &quot;200px&quot;
       )
     ),
-    
-    tabItem(tabName = &quot;C&quot;,
-      h2(&quot;C tab content&quot;)
-    ),
-    
-    tabItem(tabName = &quot;D&quot;,
-      h2(&quot;D tab content&quot;)
-    ),
-    
-    tabItem(tabName = &quot;E&quot;,
-      h2(&quot;E tab content&quot;)
+    mainPanel(
+      tabsetPanel(
+        id = 'criminal.offenses',
+        tabPanel('Criminal Offenses', 
+                 DT::dataTableOutput('criminal.offenses'),
+                 plotlyOutput(&quot;rate.bar&quot;)))
+      )
     )
-    
   )
-  )
-)
 server &lt;- function(input, output) {
-   school &lt;- t.schools2014
-    output$criminal.offenses &lt;- DT::renderDataTable({
-    DT::datatable(school[, input$show_schools, drop = FALSE], 
+  
+  schools.selected &lt;- reactive({input$show_schools})
+  
+  # choose columns to display
+  school &lt;- t.schools2014
+  output$criminal.offenses &lt;- DT::renderDataTable({
+    DT::datatable(school[, schools.selected, drop = FALSE], 
                   extensions = 'Buttons', 
                   options = list(pageLength = 25, dom = 'Bfrtip', buttons = I('colvis')),
                   class = &quot;display&quot;)
-      
-    })
-     output$total.trend &lt;- renderPlotly({
-    plot_ly(agg, x = c(2001:2014), y = agg$total, mode = &quot;lines&quot;)
+    
+  col.school &lt;- school[, schools.selected, drop = FALSE]
+  output$rate.bar &lt;- plot_ly(col.school[length(col.school),], mode = &quot;bar&quot;)
   })
   
 }
-shinyApp(ui, server)</code></pre>
+shinyApp(ui = ui, server = server)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5MaXN0ZW5pbmcgb24gaHR0cDovLzEyNy4wLjAuMTo0NzMxXG5ObyB0cmFjZSB0eXBlIHNwZWNpZmllZDpcbiAgQmFzZWQgb24gaW5mbyBzdXBwbGllZCwgYSAnc2NhdHRlcicgdHJhY2Ugc2VlbXMgYXBwcm9wcmlhdGUuXG4gIFJlYWQgbW9yZSBhYm91dCB0aGlzIHRyYWNlIHR5cGUgLT4gaHR0cHM6Ly9wbG90Lmx5L3IvcmVmZXJlbmNlLyNzY2F0dGVyXG4ifQ== -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5MaXN0ZW5pbmcgb24gaHR0cDovLzEyNy4wLjAuMTo1MjYyXG5FcnJvciBpbiAuc3Vic2V0OiBpbnZhbGlkIHN1YnNjcmlwdCB0eXBlICdjbG9zdXJlJ1N0YWNrIHRyYWNlIChpbm5lcm1vc3QgZmlyc3QpOlxuICAgIDg5OiBbLmRhdGEuZnJhbWVcbiAgICA4ODogW1xuICAgIDg3OiBiYXNlOjpyb3duYW1lc1xuICAgIDg2OiBEVDo6ZGF0YXRhYmxlXG4gICAgODU6IGV4cHJGdW5jIFsjOF1cbiAgICA4NDogd2lkZ2V0RnVuY1xuICAgIDgzOiBmdW5jXG4gICAgODI6IG9yaWdSZW5kZXJGdW5jXG4gICAgODE6IHJlbmRlckZ1bmNcbiAgICA4MDogb3JpZ1JlbmRlckZ1bmNcbiAgICA3OTogb3V0cHV0JGNyaW1pbmFsLm9mZmVuc2VzXG4gICAgIDQ6IDxBbm9ueW1vdXM+XG4gICAgIDM6IGRvLmNhbGxcbiAgICAgMjogcHJpbnQuc2hpbnkuYXBwb2JqXG4gICAgIDE6IDxQcm9taXNlPlxuIn0= -->
 <pre><code>
-Listening on http://127.0.0.1:4731
-No trace type specified:
-  Based on info supplied, a 'scatter' trace seems appropriate.
-  Read more about this trace type -&gt; https://plot.ly/r/reference/#scatter</code></pre>
+Listening on http://127.0.0.1:5262
+Error in .subset: invalid subscript type 'closure'Stack trace (innermost first):
+    89: [.data.frame
+    88: [
+    87: base::rownames
+    86: DT::datatable
+    85: exprFunc [#8]
+    84: widgetFunc
+    83: func
+    82: origRenderFunc
+    81: renderFunc
+    80: origRenderFunc
+    79: output$criminal.offenses
+     4: &lt;Anonymous&gt;
+     3: do.call
+     2: print.shiny.appobj
+     1: &lt;Promise&gt;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMgVHJlbmQgIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjXG51aSA8LSBmbHVpZFBhZ2UoXG4gIHRhYnNldFBhbmVsKFxuICAgICN0YWIgMSBmb3IgdG90YWwgY3JpbWVzIHRyZW5kIGZyb20gMjAwMSB0byAyMDE0XG4gICAgdGFiUGFuZWwoJ1RvdGFsIENyaW1lcyBUcmVuZCcsIHBsb3RseU91dHB1dChcInRvdGFsLnRyZW5kXCIpKSxcbiAgICB0YWJQYW5lbCgnVHlwZSBUcmVuZCcsIHBsb3RseU91dHB1dChcInR5cGUudHJlbmRcIikpXG4gIClcbilcblxuc2VydmVyIDwtIGZ1bmN0aW9uKGlucHV0LCBvdXRwdXQpe1xuICBcbiAgb3V0cHV0JHRvdGFsLnRyZW5kIDwtIHJlbmRlclBsb3RseSh7XG4gICAgcGxvdF9seShhZ2csIHggPSBjKDIwMDE6MjAxNCksIHkgPSBhZ2ckdG90YWwpXG4gIH0pXG59XG5cbnNoaW55QXBwKHVpID0gdWksIHNlcnZlciA9IHNlcnZlcilcbmBgYCJ9 -->
+<pre class="r"><code>###################################### Trend ######################################################
+ui &lt;- fluidPage(
+  tabsetPanel(
+    #tab 1 for total crimes trend from 2001 to 2014
+    tabPanel('Total Crimes Trend', plotlyOutput(&quot;total.trend&quot;)),
+    tabPanel('Type Trend', plotlyOutput(&quot;type.trend&quot;))
+  )
+)
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkoc2hpbnkpCmxpYnJhcnkoc2hpbnlkYXNoYm9hcmQpCmxpYnJhcnkoRFQpCmxpYnJhcnkocGxvdGx5KQoKdWkgPC0gZGFzaGJvYXJkUGFnZSgKICBkYXNoYm9hcmRIZWFkZXIoCiAgICB0aXRsZSA9ICJBQkMiCiAgKSwKICAKICBkYXNoYm9hcmRTaWRlYmFyKAogICAgc2lkZWJhck1lbnUoCiAgICBtZW51SXRlbSgiQSIsIHRhYk5hbWUgPSAiQSIsIGljb24gPSBpY29uKCJkYXNoYm9hcmQiKSksCiAgICBtZW51SXRlbSgiQiIsIHRhYk5hbWUgPSAiQiIsaWNvbiA9IGljb24oImNvZyIpLCAKICAgICAgICAgICAgIGJhZGdlTGFiZWwgPSAibmV3IiwgYmFkZ2VDb2xvciA9ICJncmVlbiIpLAogICAgbWVudUl0ZW0oIkMiLCB0YWJOYW1lID0gIkMiLCBpY29uID0gaWNvbigiY29nIikpLAogICAgbWVudUl0ZW0oIkQiLCB0YWJOYW1lID0gIkQiLCBpY29uID0gaWNvbigicmVmcmVzaCIpKSwKICAgIG1lbnVJdGVtKCJFIiwgdGFiTmFtZSA9ICJFIiwgaWNvbiA9IGljb24oInJlZnJlc2giKSkpCiAgKSwKICAKICBkYXNoYm9hcmRCb2R5KAogICAgdGFiSXRlbXMoCiAgICB0YWJJdGVtKHRhYk5hbWUgPSAiQSIsCiAgICAgIGgyKCJBIHRhYiBjb250ZW50IiksCiAgICAgIGZsdWlkUGFnZSgKICAgICAgICB0aXRsZVBhbmVsKCAnQ29tcGFyZSBEYXRhIGZvciBNdWx0aXBsZSBTY2hvb2xzJyksCiAgICAgICAgICBzaWRlYmFyTGF5b3V0KAogICAgICAgICAgICBzaWRlYmFyUGFuZWwoCiAgICAgICAgICAgICAgY2hlY2tib3hHcm91cElucHV0KGlucHV0SWQgPSAnc2hvd19zY2hvb2xzJywgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbGFiZWwgPSAnU2Nob29scyB0byBjb21wYXJlOicsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY2hvaWNlcyA9IGFzLmNoYXJhY3Rlcihjb2xuYW1lcyh0LnNjaG9vbHMyMDE0KSksIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNlbGVjdGVkID0gYXMuY2hhcmFjdGVyKGNvbG5hbWVzKHQuc2Nob29sczIwMTQpW2MoMSwyKV0pLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHdpZHRoID0gIjIwMHB4IikKICAgICAgICAgICAgKSwKICAgICAgICAgbWFpblBhbmVsKAogICAgICAgICAgICB0YWJzZXRQYW5lbCgKICAgICAgICAgICAgICAgIGlkID0gJ2NyaW1pbmFsLm9mZmVuc2VzJywKICAgICAgICAgICAgICAgIHRhYlBhbmVsKCdDcmltaW5hbCBPZmZlbnNlcycsIERUOjpkYXRhVGFibGVPdXRwdXQoJ2NyaW1pbmFsLm9mZmVuc2VzJykpKQogICAgICApKSkKICAgICksCgogICAgdGFiSXRlbSh0YWJOYW1lID0gIkIiLAogICAgICBoMigiQiB0YWIgY29udGVudCIpLAogICAgICBmbHVpZFBhZ2UoCiAgICAgICAgdGFic2V0UGFuZWwoCiAgICAgICAgICB0YWJQYW5lbCgnVG90YWwgQ3JpbWVzIFRyZW5kJywgcGxvdGx5T3V0cHV0KCJ0b3RhbC50cmVuZCIpKSwKICAgICAgICAgIHRhYlBhbmVsKCdUeXBlIFRyZW5kJywgcGxvdGx5T3V0cHV0KCJ0eXBlLnRyZW5kIikpKQogICAgICApCgogICAgKSwKICAgIAogICAgdGFiSXRlbSh0YWJOYW1lID0gIkMiLAogICAgICBoMigiQyB0YWIgY29udGVudCIpCiAgICApLAogICAgCiAgICB0YWJJdGVtKHRhYk5hbWUgPSAiRCIsCiAgICAgIGgyKCJEIHRhYiBjb250ZW50IikKICAgICksCiAgICAKICAgIHRhYkl0ZW0odGFiTmFtZSA9ICJFIiwKICAgICAgaDIoIkUgdGFiIGNvbnRlbnQiKQogICAgKQogICAgCiAgKQogICkKKQoKc2VydmVyIDwtIGZ1bmN0aW9uKGlucHV0LCBvdXRwdXQpIHsKICAgc2Nob29sIDwtIHQuc2Nob29sczIwMTQKICAgIG91dHB1dCRjcmltaW5hbC5vZmZlbnNlcyA8LSBEVDo6cmVuZGVyRGF0YVRhYmxlKHsKICAgIERUOjpkYXRhdGFibGUoc2Nob29sWywgaW5wdXQkc2hvd19zY2hvb2xzLCBkcm9wID0gRkFMU0VdLCAKICAgICAgICAgICAgICAgICAgZXh0ZW5zaW9ucyA9ICdCdXR0b25zJywgCiAgICAgICAgICAgICAgICAgIG9wdGlvbnMgPSBsaXN0KHBhZ2VMZW5ndGggPSAyNSwgZG9tID0gJ0JmcnRpcCcsIGJ1dHRvbnMgPSBJKCdjb2x2aXMnKSksCiAgICAgICAgICAgICAgICAgIGNsYXNzID0gImRpc3BsYXkiKQogICAgICAKICAgIH0pCiAgICAgb3V0cHV0JHRvdGFsLnRyZW5kIDwtIHJlbmRlclBsb3RseSh7CiAgICBwbG90X2x5KGFnZywgeCA9IGMoMjAwMToyMDE0KSwgeSA9IGFnZyR0b3RhbCwgbW9kZSA9ICJsaW5lcyIpCiAgfSkKICAKfQoKc2hpbnlBcHAodWksIHNlcnZlcikKYGBg</div>
+server &lt;- function(input, output){
+  
+  output$total.trend &lt;- renderPlotly({
+    plot_ly(agg, x = c(2001:2014), y = agg$total)
+  })
+}
+
+shinyApp(ui = ui, server = server)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KbGlicmFyeShzaGlueSkKbGlicmFyeShwbG90bHkpCgojIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMgU2Nob29scyBDb21wYXJpc2lvbiAjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjCnVpIDwtIGZsdWlkUGFnZSgKICB0aXRsZVBhbmVsKCAnQ29tcGFyZSBEYXRhIGZvciBNdWx0aXBsZSBTY2hvb2xzJyksCiAgc2lkZWJhckxheW91dCgKICAgIHNpZGViYXJQYW5lbCgKICAgICAgICBjaGVja2JveEdyb3VwSW5wdXQoaW5wdXRJZCA9ICdzaG93X3NjaG9vbHMnLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgbGFiZWwgPSAnU2Nob29scyB0byBjb21wYXJlOicsCiAgICAgICAgICAgICAgICAgICAgICAgICAgIGNob2ljZXMgPSBhcy5jaGFyYWN0ZXIoY29sbmFtZXModC5zY2hvb2xzMjAxNCkpLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgc2VsZWN0ZWQgPSBhcy5jaGFyYWN0ZXIoY29sbmFtZXModC5zY2hvb2xzMjAxNClbYygxLDIpXSksIAogICAgICAgICAgICAgICAgICAgICAgICAgICB3aWR0aCA9ICIyMDBweCIKICAgICAgKQogICAgKSwKICAgIG1haW5QYW5lbCgKICAgICAgdGFic2V0UGFuZWwoCiAgICAgICAgaWQgPSAnY3JpbWluYWwub2ZmZW5zZXMnLAogICAgICAgIHRhYlBhbmVsKCdDcmltaW5hbCBPZmZlbnNlcycsIAogICAgICAgICAgICAgICAgIERUOjpkYXRhVGFibGVPdXRwdXQoJ2NyaW1pbmFsLm9mZmVuc2VzJyksCiAgICAgICAgICAgICAgICAgcGxvdGx5T3V0cHV0KCJyYXRlLmJhciIpKSkKICAgICAgKQogICAgKQogICkKCnNlcnZlciA8LSBmdW5jdGlvbihpbnB1dCwgb3V0cHV0KSB7CiAgCiAgc2Nob29scy5zZWxlY3RlZCA8LSByZWFjdGl2ZSh7aW5wdXQkc2hvd19zY2hvb2xzfSkKICAKICAjIGNob29zZSBjb2x1bW5zIHRvIGRpc3BsYXkKICBzY2hvb2wgPC0gdC5zY2hvb2xzMjAxNAogIG91dHB1dCRjcmltaW5hbC5vZmZlbnNlcyA8LSBEVDo6cmVuZGVyRGF0YVRhYmxlKHsKICAgIERUOjpkYXRhdGFibGUoc2Nob29sWywgc2Nob29scy5zZWxlY3RlZCwgZHJvcCA9IEZBTFNFXSwgCiAgICAgICAgICAgICAgICAgIGV4dGVuc2lvbnMgPSAnQnV0dG9ucycsIAogICAgICAgICAgICAgICAgICBvcHRpb25zID0gbGlzdChwYWdlTGVuZ3RoID0gMjUsIGRvbSA9ICdCZnJ0aXAnLCBidXR0b25zID0gSSgnY29sdmlzJykpLAogICAgICAgICAgICAgICAgICBjbGFzcyA9ICJkaXNwbGF5IikKICB9KQogIAogIGNvbC5zY2hvb2wgPC0gc2Nob29sWywgc2Nob29scy5zZWxlY3RlZCwgZHJvcCA9IEZBTFNFXQogIG91dHB1dCRyYXRlLmJhciA8LSByZW5kZXJwbG90KHsKICAgIHBsb3RfbHkoY29sLnNjaG9vbFtsZW5ndGgoY29sLnNjaG9vbCksXSwgbW9kZSA9ICJiYXIiKX0pCiAgCiAgCn0KCnNoaW55QXBwKHVpID0gdWksIHNlcnZlciA9IHNlcnZlcikKYGBgCgpgYGB7cn0KIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMgVHJlbmQgIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjCnVpIDwtIGZsdWlkUGFnZSgKICB0YWJzZXRQYW5lbCgKICAgICN0YWIgMSBmb3IgdG90YWwgY3JpbWVzIHRyZW5kIGZyb20gMjAwMSB0byAyMDE0CiAgICB0YWJQYW5lbCgnVG90YWwgQ3JpbWVzIFRyZW5kJywgcGxvdGx5T3V0cHV0KCJ0b3RhbC50cmVuZCIpKSwKICAgIHRhYlBhbmVsKCdUeXBlIFRyZW5kJywgcGxvdGx5T3V0cHV0KCJ0eXBlLnRyZW5kIikpCiAgKQopCgpzZXJ2ZXIgPC0gZnVuY3Rpb24oaW5wdXQsIG91dHB1dCl7CiAgCiAgb3V0cHV0JHRvdGFsLnRyZW5kIDwtIHJlbmRlclBsb3RseSh7CiAgICBwbG90X2x5KGFnZywgeCA9IGMoMjAwMToyMDE0KSwgeSA9IGFnZyR0b3RhbCkKICB9KQp9CgpzaGlueUFwcCh1aSA9IHVpLCBzZXJ2ZXIgPSBzZXJ2ZXIpCmBgYAoK</div>
 
 
 

@@ -4,6 +4,7 @@ output: html_notebook
 ---
 ```{r}
 library(shiny)
+library(plotly)
 
 #################################### Schools Comparision ##############################################
 ui <- fluidPage(
@@ -20,21 +21,30 @@ ui <- fluidPage(
     mainPanel(
       tabsetPanel(
         id = 'criminal.offenses',
-        tabPanel('Criminal Offenses', DT::dataTableOutput('mytable')))
+        tabPanel('Criminal Offenses', 
+                 DT::dataTableOutput('criminal.offenses'),
+                 plotlyOutput("rate.bar")))
       )
     )
   )
 
 server <- function(input, output) {
- 
+  
+  schools.selected <- reactive({input$show_schools})
+  
   # choose columns to display
   school <- t.schools2014
-  output$mytable <- DT::renderDataTable({
-    DT::datatable(school[, input$show_schools, drop = FALSE], 
+  output$criminal.offenses <- DT::renderDataTable({
+    DT::datatable(school[, schools.selected, drop = FALSE], 
                   extensions = 'Buttons', 
                   options = list(pageLength = 25, dom = 'Bfrtip', buttons = I('colvis')),
                   class = "display")
   })
+  
+  col.school <- school[, schools.selected, drop = FALSE]
+  output$rate.bar <- renderplot({
+    plot_ly(col.school[length(col.school),], mode = "bar")})
+  
   
 }
 
@@ -60,3 +70,4 @@ server <- function(input, output){
 
 shinyApp(ui = ui, server = server)
 ```
+

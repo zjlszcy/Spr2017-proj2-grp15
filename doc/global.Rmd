@@ -10,7 +10,7 @@ library(plyr)
 
 ##load in the data
 ```{r}
-crimes <- read.csv("../data/OPE CSS Custom Data 2017-02-12 134856/Criminal_Offenses_On_campus.csv")
+crimes <- read.csv("../data/OPE CSS Custom Data 2017-02-12 134856/Criminal_Offenses_On_campus.csv", header = T)
 for(i in 6:19){
   as.numeric(crimes[,i])
 } 

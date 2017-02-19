@@ -5,6 +5,7 @@ output: html_notebook
 ```{r}
 library(shiny)
 library(plotly)
+library(ggplot2)
 
 #################################### Schools Comparision ##############################################
 ui <- fluidPage(
@@ -23,27 +24,30 @@ ui <- fluidPage(
         id = 'criminal.offenses',
         tabPanel('Criminal Offenses', 
                  DT::dataTableOutput('criminal.offenses'),
-                 plotlyOutput("rate.bar")))
+                 plotOutput("rate.bar")))
       )
     )
   )
 
 server <- function(input, output) {
   
-  schools.selected <- reactive({input$show_schools})
+  school <- t.schools2014
+  schools.selected <- reactive({school[, input$show_schools, drop = FALSE]})
   
   # choose columns to display
-  school <- t.schools2014
+  
   output$criminal.offenses <- DT::renderDataTable({
-    DT::datatable(school[, schools.selected, drop = FALSE], 
+    DT::datatable(schools.selected(), 
                   extensions = 'Buttons', 
                   options = list(pageLength = 25, dom = 'Bfrtip', buttons = I('colvis')),
                   class = "display")
   })
   
-  col.school <- school[, schools.selected, drop = FALSE]
-  output$rate.bar <- renderplot({
-    plot_ly(col.school[length(col.school),], mode = "bar")})
+  
+  output$rate.bar <- renderPlot({
+    barplot(as.matrix(schools.selected()[dim(schools.selected())[1],]), 
+            col = "pink", xlab = "Schools", ylab = "Crime Rate")
+    })
   
   
 }
@@ -54,20 +58,34 @@ shinyApp(ui = ui, server = server)
 ```{r}
 ###################################### Trend ######################################################
 ui <- fluidPage(
-  tabsetPanel(
-    #tab 1 for total crimes trend from 2001 to 2014
-    tabPanel('Total Crimes Trend', plotlyOutput("total.trend")),
-    tabPanel('Type Trend', plotlyOutput("type.trend"))
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("type", "Choose a type:",
+                  as.character(names(agg))[-1],
+                  as.character(names(agg))[15])
+    ),
+    mainPanel(
+      tabsetPanel(
+     
+      tabPanel('Crimes Trend', plotlyOutput("trend"))
+      
+      )
+    )
   )
 )
-
 server <- function(input, output){
   
-  output$total.trend <- renderPlotly({
-    plot_ly(agg, x = c(2001:2014), y = agg$total)
+  output$trend <- renderPlotly({
+    plot_ly(agg, x = c(2001:2014), y = agg[,input$type], mode = "line")
   })
+  
+  
 }
 
 shinyApp(ui = ui, server = server)
 ```
 
+```{r}
+#########################################just try ####################################################
+
+```

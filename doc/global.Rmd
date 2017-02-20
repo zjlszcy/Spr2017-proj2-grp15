@@ -10,11 +10,10 @@ library(plyr)
 
 ##load in the data
 ```{r}
-crimes <- read.csv("../data/OPE CSS Custom Data 2017-02-12 134856/Criminal_Offenses_On_campus.csv")
+crimes <- read.csv("../data/OPE CSS Custom Data 2017-02-12 134856/Criminal_Offenses_On_campus.csv", header = T)
 for(i in 6:19){
   as.numeric(crimes[,i])
 } 
-datatable(sample_n(crimes, 50))
 ```
 
 ##total crimes trend and every types of crimes trend
@@ -44,10 +43,21 @@ for(i in 1:30){
 }
 
 
-#calulate the num of every type of crime for each institution every year
+##calulate the num of every type of crime for each institution every year
 d.schools <- ldply(schools)
 agg1 <- aggregate(d.schools[,-c(1:6)], list(d.schools$Survey.year, d.schools$Institution.name), sum)
 enrollment <- c(9181, 2209, 12587, 27589, 21679, 6298, 15865, 14769, 17858, 28791, 21372, 11319, 21554  ,8808, 6621, 16963,10907, 37565, 41845, 15097, 43625, 29135, 12179, 24806, 42453, 23732, 12686, 7788, 14348, 12336)
 enrollment <- as.vector(sapply(enrollment, rep, 14))
 agg1$institution.size <- enrollment
+agg1$crime.rate <- round(agg1$total/agg1$institution.size,4)
+
+#2014 data for every school
+schools2014 <- agg1[agg1$Group.1 == "2014",]
+t.schools2014 <- t(schools2014)[-1,]
+colnames(t.schools2014) <- as.character(t.schools2014[1,])
+t.schools2014 <- as.data.frame(t.schools2014[-1,])
+
 ```
+
+
+

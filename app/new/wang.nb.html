@@ -142,7 +142,7 @@ $(document).ready(function () {
 </style>
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("ui.Rmd");
+  window.initializeSourceEmbed("wang.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
@@ -174,55 +174,140 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShzaGlueSlcbmxpYnJhcnkoZ2dwbG90MilcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShzaGlueSlcbmxpYnJhcnkocGxvdGx5KVxubGlicmFyeShnZ3Bsb3QyKVxuIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIFNjaG9vbHMgQ29tcGFyaXNpb24gIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjI1xudWkgPC0gZmx1aWRQYWdlKFxuICB0aXRsZVBhbmVsKCAnQ29tcGFyZSBEYXRhIGZvciBNdWx0aXBsZSBTY2hvb2xzJyksXG4gIHNpZGViYXJMYXlvdXQoXG4gICAgc2lkZWJhclBhbmVsKFxuICAgICAgICBjaGVja2JveEdyb3VwSW5wdXQoaW5wdXRJZCA9ICdzaG93X3NjaG9vbHMnLCBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIGxhYmVsID0gJ1NjaG9vbHMgdG8gY29tcGFyZTonLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgY2hvaWNlcyA9IGFzLmNoYXJhY3Rlcihjb2xuYW1lcyh0LnNjaG9vbHMyMDE0KSksIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgc2VsZWN0ZWQgPSBhcy5jaGFyYWN0ZXIoY29sbmFtZXModC5zY2hvb2xzMjAxNClbYygxLDIpXSksIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgd2lkdGggPSBcIjIwMHB4XCJcbiAgICAgIClcbiAgICApLFxuICAgIG1haW5QYW5lbChcbiAgICAgIHRhYnNldFBhbmVsKFxuICAgICAgICBpZCA9ICdjcmltaW5hbC5vZmZlbnNlcycsXG4gICAgICAgIHRhYlBhbmVsKCdDcmltaW5hbCBPZmZlbnNlcycsIFxuICAgICAgICAgICAgICAgICBEVDo6ZGF0YVRhYmxlT3V0cHV0KCdjcmltaW5hbC5vZmZlbnNlcycpLFxuICAgICAgICAgICAgICAgICBwbG90T3V0cHV0KFwicmF0ZS5iYXJcIikpKVxuICAgICAgKVxuICAgIClcbiAgKVxuc2VydmVyIDwtIGZ1bmN0aW9uKGlucHV0LCBvdXRwdXQpIHtcbiAgXG4gIHNjaG9vbCA8LSB0LnNjaG9vbHMyMDE0XG4gIHNjaG9vbHMuc2VsZWN0ZWQgPC0gcmVhY3RpdmUoe3NjaG9vbFssIGlucHV0JHNob3dfc2Nob29scywgZHJvcCA9IEZBTFNFXX0pXG4gIFxuICAjIGNob29zZSBjb2x1bW5zIHRvIGRpc3BsYXlcbiAgXG4gIG91dHB1dCRjcmltaW5hbC5vZmZlbnNlcyA8LSBEVDo6cmVuZGVyRGF0YVRhYmxlKHtcbiAgICBEVDo6ZGF0YXRhYmxlKHNjaG9vbHMuc2VsZWN0ZWQoKSwgXG4gICAgICAgICAgICAgICAgICBleHRlbnNpb25zID0gJ0J1dHRvbnMnLCBcbiAgICAgICAgICAgICAgICAgIG9wdGlvbnMgPSBsaXN0KHBhZ2VMZW5ndGggPSAyNSwgZG9tID0gJ0JmcnRpcCcsIGJ1dHRvbnMgPSBJKCdjb2x2aXMnKSksXG4gICAgICAgICAgICAgICAgICBjbGFzcyA9IFwiZGlzcGxheVwiKVxuICB9KVxuICBcbiAgXG4gIG91dHB1dCRyYXRlLmJhciA8LSByZW5kZXJQbG90KHtcbiAgICBiYXJwbG90KGFzLm1hdHJpeChzY2hvb2xzLnNlbGVjdGVkKClbZGltKHNjaG9vbHMuc2VsZWN0ZWQoKSlbMV0sXSksIFxuICAgICAgICAgICAgY29sID0gXCJwaW5rXCIsIHhsYWIgPSBcIlNjaG9vbHNcIiwgeWxhYiA9IFwiQ3JpbWUgUmF0ZVwiKVxuICAgIH0pXG4gIFxuICBcbn1cbnNoaW55QXBwKHVpID0gdWksIHNlcnZlciA9IHNlcnZlcilcbmBgYCJ9 -->
 <pre class="r"><code>library(shiny)
-library(ggplot2)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYZ2dwbG90MuKAmVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdCBpcyBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOk5MUOKAmTpcblxuICAgIGFubm90YXRlXG4ifQ== -->
-<pre><code>
-Attaching package: ‘ggplot2’
-
-The following object is masked from ‘package:NLP’:
-
-    annotate</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudWkgPC0gZmx1aWRQYWdlKFxuICB0aXRsZVBhbmVsKFwiQ29tcGFyZSBEYXRhIGZvciBUd28gU2Nob29sc1wiKSxcbiAgIyBDcmVhdGUgYSBuZXcgUm93IGluIHRoZSBVSSBmb3Igc2VsZWN0SW5wdXRzXG4gIGZsdWlkUm93KFxuICAgIGNvbHVtbig0LFxuICAgICAgICBzZWxlY3RJbnB1dChcInNjaG9vbFwiLFxuICAgICAgICAgICAgICAgICAgICBcIlNjaG9vbDpcIixcbiAgICAgICAgICAgICAgICAgICAgYyhcIkFsbFwiLFxuICAgICAgICAgICAgICAgICAgICAgIHVuaXF1ZShhcy5jaGFyYWN0ZXIoc2Nob29sczIwMTQkR3JvdXAuMikpKSlcbiAgICApXG4gICAgXG4gICksXG4gICMgQ3JlYXRlIGEgbmV3IHJvdyBmb3IgdGhlIHRhYmxlLlxuICBmbHVpZFJvdyhcbiAgICBEVDo6ZGF0YVRhYmxlT3V0cHV0KFwidGFibGVcIilcbiAgKVxuKVxuc2VydmVyIDwtIGZ1bmN0aW9uKGlucHV0LCBvdXRwdXQpIHtcbiAgIyBGaWx0ZXIgZGF0YSBiYXNlZCBvbiBzZWxlY3Rpb25zXG4gIG91dHB1dCR0YWJsZSA8LSBEVDo6cmVuZGVyRGF0YVRhYmxlKERUOjpkYXRhdGFibGUoe1xuICAgIGRhdGEgPC0gc2Nob29sczIwMTRcbiAgICBpZiAoaW5wdXQkc2Nob29sICE9IFwiQWxsXCIpIHtcbiAgICAgIGRhdGEgPC0gZGF0YVtkYXRhJEdyb3VwLjIgPT0gaW5wdXQkc2Nob29sLF1cbiAgICB9XG4gICAgZGF0YVxuICB9KSlcbn1cbnNoaW55QXBwKHVpID0gdWksIHNlcnZlciA9IHNlcnZlcilcbmBgYCJ9 -->
-<pre class="r"><code>ui &lt;- fluidPage(
-  titlePanel(&quot;Compare Data for Two Schools&quot;),
-  # Create a new Row in the UI for selectInputs
-  fluidRow(
-    column(4,
-        selectInput(&quot;school&quot;,
-                    &quot;School:&quot;,
-                    c(&quot;All&quot;,
-                      unique(as.character(schools2014$Group.2))))
+library(plotly)
+library(ggplot2)
+#################################### Schools Comparision ##############################################
+ui &lt;- fluidPage(
+  titlePanel( 'Compare Data for Multiple Schools'),
+  sidebarLayout(
+    sidebarPanel(
+        checkboxGroupInput(inputId = 'show_schools', 
+                           label = 'Schools to compare:',
+                           choices = as.character(colnames(t.schools2014)), 
+                           selected = as.character(colnames(t.schools2014)[c(1,2)]), 
+                           width = &quot;200px&quot;
+      )
+    ),
+    mainPanel(
+      tabsetPanel(
+        id = 'criminal.offenses',
+        tabPanel('Criminal Offenses', 
+                 DT::dataTableOutput('criminal.offenses'),
+                 plotOutput(&quot;rate.bar&quot;)))
+      )
     )
-    
-  ),
-  # Create a new row for the table.
-  fluidRow(
-    DT::dataTableOutput(&quot;table&quot;)
   )
-)
 server &lt;- function(input, output) {
-  # Filter data based on selections
-  output$table &lt;- DT::renderDataTable(DT::datatable({
-    data &lt;- schools2014
-    if (input$school != &quot;All&quot;) {
-      data &lt;- data[data$Group.2 == input$school,]
-    }
-    data
-  }))
+  
+  school &lt;- t.schools2014
+  schools.selected &lt;- reactive({school[, input$show_schools, drop = FALSE]})
+  
+  # choose columns to display
+  
+  output$criminal.offenses &lt;- DT::renderDataTable({
+    DT::datatable(schools.selected(), 
+                  extensions = 'Buttons', 
+                  options = list(pageLength = 25, dom = 'Bfrtip', buttons = I('colvis')),
+                  class = &quot;display&quot;)
+  })
+  
+  
+  output$rate.bar &lt;- renderPlot({
+    barplot(as.matrix(schools.selected()[dim(schools.selected())[1],]), 
+            col = &quot;pink&quot;, xlab = &quot;Schools&quot;, ylab = &quot;Crime Rate&quot;)
+    })
+  
+  
 }
 shinyApp(ui = ui, server = server)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5MaXN0ZW5pbmcgb24gaHR0cDovLzEyNy4wLjAuMTo1MTA4XG4ifQ== -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5MaXN0ZW5pbmcgb24gaHR0cDovLzEyNy4wLjAuMTo1MjYyXG4ifQ== -->
 <pre><code>
-Listening on http://127.0.0.1:5108</code></pre>
+Listening on http://127.0.0.1:5262</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMgVHJlbmQgIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjXG51aSA8LSBmbHVpZFBhZ2UoXG4gIHNpZGViYXJMYXlvdXQoXG4gICAgc2lkZWJhclBhbmVsKFxuICAgICAgc2VsZWN0SW5wdXQoXCJ0eXBlXCIsIFwiQ2hvb3NlIGEgdHlwZTpcIixcbiAgICAgICAgICAgICAgICAgIGFzLmNoYXJhY3RlcihuYW1lcyhhZ2cpKVstMV0sXG4gICAgICAgICAgICAgICAgICBhcy5jaGFyYWN0ZXIobmFtZXMoYWdnKSlbMTVdKVxuICAgICksXG4gICAgbWFpblBhbmVsKFxuICAgICAgdGFic2V0UGFuZWwoXG4gICAgIFxuICAgICAgdGFiUGFuZWwoJ0NyaW1lcyBUcmVuZCcsIHBsb3RseU91dHB1dChcInRyZW5kXCIpKVxuICAgICAgXG4gICAgICApXG4gICAgKVxuICApXG4pXG5zZXJ2ZXIgPC0gZnVuY3Rpb24oaW5wdXQsIG91dHB1dCl7XG4gIFxuICBvdXRwdXQkdHJlbmQgPC0gcmVuZGVyUGxvdGx5KHtcbiAgICBwbG90X2x5KGFnZywgeCA9IGMoMjAwMToyMDE0KSwgeSA9IGFnZ1ssaW5wdXQkdHlwZV0sIG1vZGUgPSBcImxpbmVcIilcbiAgfSlcbiAgXG4gIFxufVxuc2hpbnlBcHAodWkgPSB1aSwgc2VydmVyID0gc2VydmVyKVxuYGBgIn0= -->
+<pre class="r"><code>###################################### Trend ######################################################
+ui &lt;- fluidPage(
+  sidebarLayout(
+    sidebarPanel(
+      selectInput(&quot;type&quot;, &quot;Choose a type:&quot;,
+                  as.character(names(agg))[-1],
+                  as.character(names(agg))[15])
+    ),
+    mainPanel(
+      tabsetPanel(
+     
+      tabPanel('Crimes Trend', plotlyOutput(&quot;trend&quot;))
+      
+      )
+    )
+  )
+)
+server &lt;- function(input, output){
+  
+  output$trend &lt;- renderPlotly({
+    plot_ly(agg, x = c(2001:2014), y = agg[,input$type], mode = &quot;line&quot;)
+  })
+  
+  
+}
+shinyApp(ui = ui, server = server)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5MaXN0ZW5pbmcgb24gaHR0cDovLzEyNy4wLjAuMTo1MjYyXG5ObyB0cmFjZSB0eXBlIHNwZWNpZmllZDpcbiAgQmFzZWQgb24gaW5mbyBzdXBwbGllZCwgYSAnc2NhdHRlcicgdHJhY2Ugc2VlbXMgYXBwcm9wcmlhdGUuXG4gIFJlYWQgbW9yZSBhYm91dCB0aGlzIHRyYWNlIHR5cGUgLT4gaHR0cHM6Ly9wbG90Lmx5L3IvcmVmZXJlbmNlLyNzY2F0dGVyXG5BIGxpbmUgb2JqZWN0IGhhcyBiZWVuIHNwZWNpZmllZCwgYnV0IGxpbmVzIGlzIG5vdCBpbiB0aGUgbW9kZVxuQWRkaW5nIGxpbmVzIHRvIHRoZSBtb2RlLi4uXG5ObyB0cmFjZSB0eXBlIHNwZWNpZmllZDpcbiAgQmFzZWQgb24gaW5mbyBzdXBwbGllZCwgYSAnc2NhdHRlcicgdHJhY2Ugc2VlbXMgYXBwcm9wcmlhdGUuXG4gIFJlYWQgbW9yZSBhYm91dCB0aGlzIHRyYWNlIHR5cGUgLT4gaHR0cHM6Ly9wbG90Lmx5L3IvcmVmZXJlbmNlLyNzY2F0dGVyXG5BIGxpbmUgb2JqZWN0IGhhcyBiZWVuIHNwZWNpZmllZCwgYnV0IGxpbmVzIGlzIG5vdCBpbiB0aGUgbW9kZVxuQWRkaW5nIGxpbmVzIHRvIHRoZSBtb2RlLi4uXG4ifQ== -->
+<pre><code>
+Listening on http://127.0.0.1:5262
+No trace type specified:
+  Based on info supplied, a 'scatter' trace seems appropriate.
+  Read more about this trace type -&gt; https://plot.ly/r/reference/#scatter
+A line object has been specified, but lines is not in the mode
+Adding lines to the mode...
+No trace type specified:
+  Based on info supplied, a 'scatter' trace seems appropriate.
+  Read more about this trace type -&gt; https://plot.ly/r/reference/#scatter
+A line object has been specified, but lines is not in the mode
+Adding lines to the mode...</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyNqdXN0IHRyeSAjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjXG51aSA8LSBmbHVpZFBhZ2UoXG4gIHNpZGViYXJMYXlvdXQoXG4gICAgc2lkZWJhclBhbmVsKFxuICAgICAgc2VsZWN0SW5wdXQoXCJ0eXBlXCIsIFwiQ2hvb3NlIGEgdHlwZVwiLFxuICAgICAgICAgICAgICAgICAgYXMuY2hhcmFjdGVyKG5hbWVzKGFnZykpWy0xXSxcbiAgICAgICAgICAgICAgICAgIGFzLmNoYXJhY3RlcihuYW1lcyhhZ2cpKVsyXSlcbiAgICApLFxuICAgIG1haW5QYW5lbChcbiAgICAgIHRhYnNldFBhbmVsKFxuICAgICAgICB0YWJQYW5lbChcIlRvdGFsIFRyZW5kXCIsIHBsb3RseU91dHB1dChcInRvdGFsbFwiKSksXG4gICAgICAgIHRhYlBhbmVsKFwiVHlwZSBUcmVuZFwiLCBwbG90bHlPdXRwdXQoXCJ0eXBlXCIpKVxuICAgICAgKVxuICAgIClcbiAgKVxuKVxuc2VydmVyIDwtIGZ1bmN0aW9uKGlucHV0LCBvdXRwdXQpe1xuICAjb3V0cHV0JHRvdGFsbCA8LSBwbG90X2x5KGFnZywgeCA9IGMoMjAwMToyMDE0KSwgeSA9IGFnZyR0b3RhbCwgbW9kZSA9IFwibGluZVwiKVxuICBcbiAgI291dHB1dCR0eXBlIDwtIHBsb3RfbHkoYWdnLCB4ID0gYygyMDAxOjIwMTQpLCB5ID0gYWdnJHR5cGUsIG1vZGUgPSBcImxpbmVcIilcbn1cbnNoaW55QXBwKHVpLCBzZXJ2ZXIpXG5gYGAifQ== -->
+<pre class="r"><code>#########################################just try ####################################################
+ui &lt;- fluidPage(
+  sidebarLayout(
+    sidebarPanel(
+      selectInput(&quot;type&quot;, &quot;Choose a type&quot;,
+                  as.character(names(agg))[-1],
+                  as.character(names(agg))[2])
+    ),
+    mainPanel(
+      tabsetPanel(
+        tabPanel(&quot;Total Trend&quot;, plotlyOutput(&quot;totall&quot;)),
+        tabPanel(&quot;Type Trend&quot;, plotlyOutput(&quot;type&quot;))
+      )
+    )
+  )
+)
+server &lt;- function(input, output){
+  #output$totall &lt;- plot_ly(agg, x = c(2001:2014), y = agg$total, mode = &quot;line&quot;)
+  
+  #output$type &lt;- plot_ly(agg, x = c(2001:2014), y = agg$type, mode = &quot;line&quot;)
+}
+shinyApp(ui, server)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5MaXN0ZW5pbmcgb24gaHR0cDovLzEyNy4wLjAuMTo1MjYyXG4ifQ== -->
+<pre><code>
+Listening on http://127.0.0.1:5262</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KbGlicmFyeShzaGlueSkKbGlicmFyeShnZ3Bsb3QyKQoKdWkgPC0gZmx1aWRQYWdlKAogIHRpdGxlUGFuZWwoIkNvbXBhcmUgRGF0YSBmb3IgVHdvIFNjaG9vbHMiKSwKCiAgIyBDcmVhdGUgYSBuZXcgUm93IGluIHRoZSBVSSBmb3Igc2VsZWN0SW5wdXRzCiAgZmx1aWRSb3coCiAgICBjb2x1bW4oNCwKICAgICAgICBzZWxlY3RJbnB1dCgic2Nob29sIiwKICAgICAgICAgICAgICAgICAgICAiU2Nob29sOiIsCiAgICAgICAgICAgICAgICAgICAgYygiQWxsIiwKICAgICAgICAgICAgICAgICAgICAgIHVuaXF1ZShhcy5jaGFyYWN0ZXIoc2Nob29sczIwMTQkR3JvdXAuMikpKSkKICAgICkKICAgIAogICksCiAgIyBDcmVhdGUgYSBuZXcgcm93IGZvciB0aGUgdGFibGUuCiAgZmx1aWRSb3coCiAgICBEVDo6ZGF0YVRhYmxlT3V0cHV0KCJ0YWJsZSIpCiAgKQopCgpzZXJ2ZXIgPC0gZnVuY3Rpb24oaW5wdXQsIG91dHB1dCkgewoKICAjIEZpbHRlciBkYXRhIGJhc2VkIG9uIHNlbGVjdGlvbnMKICBvdXRwdXQkdGFibGUgPC0gRFQ6OnJlbmRlckRhdGFUYWJsZShEVDo6ZGF0YXRhYmxlKHsKICAgIGRhdGEgPC0gc2Nob29sczIwMTQKICAgIGlmIChpbnB1dCRzY2hvb2wgIT0gIkFsbCIpIHsKICAgICAgZGF0YSA8LSBkYXRhW2RhdGEkR3JvdXAuMiA9PSBpbnB1dCRzY2hvb2wsXQogICAgfQogICAgZGF0YQogIH0pKQoKfQoKc2hpbnlBcHAodWkgPSB1aSwgc2VydmVyID0gc2VydmVyKQpgYGA=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KbGlicmFyeShzaGlueSkKbGlicmFyeShwbG90bHkpCmxpYnJhcnkoZ2dwbG90MikKCiMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyBTY2hvb2xzIENvbXBhcmlzaW9uICMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMKdWkgPC0gZmx1aWRQYWdlKAogIHRpdGxlUGFuZWwoICdDb21wYXJlIERhdGEgZm9yIE11bHRpcGxlIFNjaG9vbHMnKSwKICBzaWRlYmFyTGF5b3V0KAogICAgc2lkZWJhclBhbmVsKAogICAgICAgIGNoZWNrYm94R3JvdXBJbnB1dChpbnB1dElkID0gJ3Nob3dfc2Nob29scycsIAogICAgICAgICAgICAgICAgICAgICAgICAgICBsYWJlbCA9ICdTY2hvb2xzIHRvIGNvbXBhcmU6JywKICAgICAgICAgICAgICAgICAgICAgICAgICAgY2hvaWNlcyA9IGFzLmNoYXJhY3Rlcihjb2xuYW1lcyh0LnNjaG9vbHMyMDE0KSksIAogICAgICAgICAgICAgICAgICAgICAgICAgICBzZWxlY3RlZCA9IGFzLmNoYXJhY3Rlcihjb2xuYW1lcyh0LnNjaG9vbHMyMDE0KVtjKDEsMildKSwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgIHdpZHRoID0gIjIwMHB4IgogICAgICApCiAgICApLAogICAgbWFpblBhbmVsKAogICAgICB0YWJzZXRQYW5lbCgKICAgICAgICBpZCA9ICdjcmltaW5hbC5vZmZlbnNlcycsCiAgICAgICAgdGFiUGFuZWwoJ0NyaW1pbmFsIE9mZmVuc2VzJywgCiAgICAgICAgICAgICAgICAgRFQ6OmRhdGFUYWJsZU91dHB1dCgnY3JpbWluYWwub2ZmZW5zZXMnKSwKICAgICAgICAgICAgICAgICBwbG90T3V0cHV0KCJyYXRlLmJhciIpKSkKICAgICAgKQogICAgKQogICkKCnNlcnZlciA8LSBmdW5jdGlvbihpbnB1dCwgb3V0cHV0KSB7CiAgCiAgc2Nob29sIDwtIHQuc2Nob29sczIwMTQKICBzY2hvb2xzLnNlbGVjdGVkIDwtIHJlYWN0aXZlKHtzY2hvb2xbLCBpbnB1dCRzaG93X3NjaG9vbHMsIGRyb3AgPSBGQUxTRV19KQogIAogICMgY2hvb3NlIGNvbHVtbnMgdG8gZGlzcGxheQogIAogIG91dHB1dCRjcmltaW5hbC5vZmZlbnNlcyA8LSBEVDo6cmVuZGVyRGF0YVRhYmxlKHsKICAgIERUOjpkYXRhdGFibGUoc2Nob29scy5zZWxlY3RlZCgpLCAKICAgICAgICAgICAgICAgICAgZXh0ZW5zaW9ucyA9ICdCdXR0b25zJywgCiAgICAgICAgICAgICAgICAgIG9wdGlvbnMgPSBsaXN0KHBhZ2VMZW5ndGggPSAyNSwgZG9tID0gJ0JmcnRpcCcsIGJ1dHRvbnMgPSBJKCdjb2x2aXMnKSksCiAgICAgICAgICAgICAgICAgIGNsYXNzID0gImRpc3BsYXkiKQogIH0pCiAgCiAgCiAgb3V0cHV0JHJhdGUuYmFyIDwtIHJlbmRlclBsb3QoewogICAgYmFycGxvdChhcy5tYXRyaXgoc2Nob29scy5zZWxlY3RlZCgpW2RpbShzY2hvb2xzLnNlbGVjdGVkKCkpWzFdLF0pLCAKICAgICAgICAgICAgY29sID0gInBpbmsiLCB4bGFiID0gIlNjaG9vbHMiLCB5bGFiID0gIkNyaW1lIFJhdGUiKQogICAgfSkKICAKICAKfQoKc2hpbnlBcHAodWkgPSB1aSwgc2VydmVyID0gc2VydmVyKQpgYGAKCmBgYHtyfQojIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyBUcmVuZCAjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMKdWkgPC0gZmx1aWRQYWdlKAogIHNpZGViYXJMYXlvdXQoCiAgICBzaWRlYmFyUGFuZWwoCiAgICAgIHNlbGVjdElucHV0KCJ0eXBlIiwgIkNob29zZSBhIHR5cGU6IiwKICAgICAgICAgICAgICAgICAgYXMuY2hhcmFjdGVyKG5hbWVzKGFnZykpWy0xXSwKICAgICAgICAgICAgICAgICAgYXMuY2hhcmFjdGVyKG5hbWVzKGFnZykpWzE1XSkKICAgICksCiAgICBtYWluUGFuZWwoCiAgICAgIHRhYnNldFBhbmVsKAogICAgIAogICAgICB0YWJQYW5lbCgnQ3JpbWVzIFRyZW5kJywgcGxvdGx5T3V0cHV0KCJ0cmVuZCIpKQogICAgICAKICAgICAgKQogICAgKQogICkKKQpzZXJ2ZXIgPC0gZnVuY3Rpb24oaW5wdXQsIG91dHB1dCl7CiAgCiAgb3V0cHV0JHRyZW5kIDwtIHJlbmRlclBsb3RseSh7CiAgICBwbG90X2x5KGFnZywgeCA9IGMoMjAwMToyMDE0KSwgeSA9IGFnZ1ssaW5wdXQkdHlwZV0sIG1vZGUgPSAibGluZSIpCiAgfSkKICAKICAKfQoKc2hpbnlBcHAodWkgPSB1aSwgc2VydmVyID0gc2VydmVyKQpgYGAKCmBgYHtyfQojIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjI2p1c3QgdHJ5ICMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMKCmBgYA==</div>
 
 
 

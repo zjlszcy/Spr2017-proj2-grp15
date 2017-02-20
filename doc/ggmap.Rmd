@@ -1,10 +1,11 @@
 ---
-title: "R Notebook"
+title: "Campus Crime Visualization"
 output: html_notebook
 ---
 
 ```{r}
 library(ggplot2)
+library(ggthemes)
 library(ggmap)
 
 ## Total Crimes on Campus in U.S.
@@ -12,21 +13,100 @@ crimes <- read.csv("../data/OPE CSS Custom Data 2017-02-12 134856/Criminal_Offen
 
 ## Get Unique Campus Names
 length(unique(crimes$Institution.name))
-campus_1 <- as.character(unique(crimes$Institution.name))[1:960] # chenyun
-campus_2 <- as.character(unique(crimes$Institution.name))[961:1921] # nanjun
-campus_3 <- as.character(unique(crimes$Institution.name))[1922:2884] # yuxin
+# campus_1 <- as.character(unique(crimes$Institution.name))[1:960] # chenyun
+# campus_2 <- as.character(unique(crimes$Institution.name))[961:1921] # nanjun
+# campus_3 <- as.character(unique(crimes$Institution.name))[1922:2884] # yuxin
 
-## Can only search 2500 at one time
-coordinate_1 <- geocode(campus_1) # chenyun
-coordinate_2 <- geocode(campus_2) # nanjun
-coordinate_3 <- geocode(campus_3) # yuxin
+## To run the following code takes a long time so we run seperately and save it to a file named "All_Coordinate"
+# coordinate_1 <- geocode(campus_1) 
+# coordinate_2 <- geocode(campus_2) 
+# coordinate_3 <- geocode(campus_3) 
+coordinate <- read.csv("../data/All_Coordinate.csv")
+coordinate <- coordinate[,-1]
 
-write.csv(coordinate_3,file="test3.csv")
+campus <- unique(crimes$Institution.name)
+campus <- cbind(campus, coordinate)
+
+## Check the missing value and search for the longitude & latitude manually
+na.index <- which(is.na(campus[,2]))
+campus[31, 2:3] <- geocode("alfred university")
+campus[43, 2:3] <- geocode("American Baptist College")
+campus[178, 2:3] <- c(-85.1892, 34.2904)
+campus[194, 2:3] <- geocode(as.character(campus[194,1]))
+campus[253, 2:3] <- geocode(as.character(campus[253,1]))
+
+na.index <- which(is.na(campus[,2]))
+
+for (i in na.index){
+  campus[i, 2:3] <- geocode(as.character(campus[i,1]))
+}
+
+which(is.na(campus[,2]))
+
+campus[924, 2:3] <- c(-81.3626, 28.3025)
+campus[2376, 2:3] <- c(-77.6493, 39.9492)
+
+## Delete the campus we cannot even find the location manually
+campus <- campus[-c(710,945,1121,1340,1531,2797),]
+
+## Check NA value
+sum(is.na(campus[,2:3]))
+ 
+## Update dataframe crimes as well
+unselect <- unique(crimes$Institution.name)[c(710,945,1121,1340,1531,2797)]
+new_crimes <- crimes[! crimes$Institution.name %in% unselect,]
+
+#write.csv(coordinate_3,file="test3.csv")
 # which(is.na(coordinate)) some of them are NA
+
 
 ## Get U.S. Map
 map <- get_map(location = "united states", zoom = 4, maptype = "toner",source = "stamen")
 
-## Plot the Campus Locations
-ggmap(map, base_layer = ggplot(aes(x = lon, y = lat), data = coordinate_1)) + geom_point(color = "red", alpha = 1)
+## Plot the All researched Campus Locations
+campus_map = ggmap(map, base_layer = ggplot(aes(x = lon, y = lat), data = campus)) + geom_point(color = 2, alpha = 1)
+campus_map
+
+## Total crimes for each campus
+new_crimes$sub_total <- rowSums(new_crimes[, 7:19], na.rm = T)
+
+## Remove campus that have no reports of crimes all these year
+all_year_ttl <- aggregate(new_crimes$sub_total, by = list(new_crimes$Institution.name), FUN = sum)
+colnames(all_year_ttl) <- c("Institution.name", "Total")
+ttl_zero <- as.vector(all_year_ttl$Institution.name[which(all_year_ttl$Total == 0)])
+new_all_year_ttl <- all_year_ttl[! all_year_ttl$Institution.name %in% ttl_zero,]
+new_campus <- campus[campus$campus %in% new_all_year_ttl$Institution.name,]
+final_crimes <- new_crimes[new_crimes$Institution.name %in% new_all_year_ttl$Institution.name,]
+table(new_all_year_ttl$Institution.name %in% new_campus$campus)
+
+## Sort the data frames by alphabetic order of campus name
+new_all_year_ttl <- new_all_year_ttl[order(new_all_year_ttl$Institution.name), ]
+new_campus <- new_campus[order(new_campus$campus),]
+all.equal(new_all_year_ttl$Institution.name, new_campus$campus)
+
+## All year total crime for each campus 
+new_campus$total <- new_all_year_ttl$Total
+
+
+## Append institution size
+size <- aggregate(final_crimes$sub_total, by = list(final_crimes$Institution.name, final_crimes$Institution.Size), FUN = sum)
+order_size <- size[order(size$Group.1),]
+names(order_size) <- c("insti.name", "size")
+final_size <- aggregate(order_size$size, by = list(order_size$insti.name), FUN = sum)
+all.equal(final_size$Group.1, new_campus$campus)
+new_campus$pop <- final_size$x
+new_campus$rate <- new_campus$total / new_campus$pop
 ```
+
+
+```{r}
+## Draw the map w.r.t total crimes in each campus
+ggmap(map, base_layer = ggplot(aes(x = lon, y = lat), data = new_campus)) + geom_point(aes(x=lon, y=lat, level = rate), col = 2, data = new_campus, alpha=.2) #+ stat_density2d(aes(x = lon, y = lat, fill=..level..), data = new_campus, geom="polygon", alpha=0.2) #+ scale_fill_gradient(low = "yellow", high = "red")
+```
+
+
+
+
+
+
+

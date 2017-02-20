@@ -1,0 +1,91 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+library(shiny)
+library(plotly)
+library(ggplot2)
+
+#################################### Schools Comparision ##############################################
+ui <- fluidPage(
+  titlePanel( 'Compare Data for Multiple Schools'),
+  sidebarLayout(
+    sidebarPanel(
+        checkboxGroupInput(inputId = 'show_schools', 
+                           label = 'Schools to compare:',
+                           choices = as.character(colnames(t.schools2014)), 
+                           selected = as.character(colnames(t.schools2014)[c(1,2)]), 
+                           width = "200px"
+      )
+    ),
+    mainPanel(
+      tabsetPanel(
+        id = 'criminal.offenses',
+        tabPanel('Criminal Offenses', 
+                 DT::dataTableOutput('criminal.offenses'),
+                 plotOutput("rate.bar")))
+      )
+    )
+  )
+
+server <- function(input, output) {
+  
+  school <- t.schools2014
+  schools.selected <- reactive({school[, input$show_schools, drop = FALSE]})
+  
+  # choose columns to display
+  
+  output$criminal.offenses <- DT::renderDataTable({
+    DT::datatable(schools.selected(), 
+                  extensions = 'Buttons', 
+                  options = list(pageLength = 25, dom = 'Bfrtip', buttons = I('colvis')),
+                  class = "display")
+  })
+  
+  
+  output$rate.bar <- renderPlot({
+    barplot(as.matrix(schools.selected()[dim(schools.selected())[1],]), 
+            col = "pink", xlab = "Schools", ylab = "Crime Rate")
+    })
+  
+  
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+```{r}
+###################################### Trend ######################################################
+ui <- fluidPage(
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("type", "Choose a type:",
+                  as.character(names(agg))[-1],
+                  as.character(names(agg))[15])
+    ),
+    mainPanel(
+      tabsetPanel(
+     
+      tabPanel('Crimes Trend', plotlyOutput("trend"))
+      
+      )
+    )
+  )
+)
+server <- function(input, output){
+  
+  output$trend <- renderPlotly({
+    plot_ly(agg, x = c(2001:2014), y = agg[,input$type], mode = "line")
+  })
+  
+  
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+```{r}
+#########################################just try ####################################################
+
+```

@@ -4,23 +4,60 @@ output: html_notebook
 ---
 ##load the data manipulation libraries
 ```{r}
-
+library(DT)
+library(plyr)
 ```
 
 ##load in the data
 ```{r}
-crimes <- read.csv("../data/OPE CSS Custom Data 2017-02-12 134856/Criminal_Offenses_On_campus.csv")
+crimes <- read.csv("../data/OPE CSS Custom Data 2017-02-12 134856/Criminal_Offenses_On_campus.csv", header = T)
 for(i in 6:19){
   as.numeric(crimes[,i])
-} #convert integer to numberic
+} 
 ```
 
-##trend
+##total crimes trend and every types of crimes trend
 ```{r}
-crimes$total <- rowSums(crimes[,-c(1:6)],na.rm = TRUE) #sum of all types of crimes for each institution
+##calculate total num of crimes for every year
+crimes$total <- rowSums(crimes[,-c(1:6)],na.rm = TRUE)
 crimes.split <- split(crimes, f = as.factor(crimes$Survey.year))
 year.sum <- NA
 for(i in 1: length(crimes.split)){
  year.sum[i] <- sum(crimes.split[[i]]$total) 
-} #calculate total crimes of every year
+} 
+
+#calculate num of every type of crimes for every year
+agg <- aggregate(crimes[,-c(1:6)], list(crimes$Survey.year), sum)
 ```
+
+##Ranking
+```{r}
+##read in all universities files
+schools.list <- list.files(path = "../data/Ranking/", pattern = "*.csv")
+schools.list <- paste("/Users/ouminamikun/Desktop/Columbia/Spring 2017/ADS/Spr2017-proj2-grp15/data/Ranking/", schools.list, sep = "")
+schools <- lapply(schools.list, read.csv)
+
+#calculate total crimes for each campus
+for(i in 1:30){
+  schools[[i]]$total <- rowSums(schools[[i]][,-c(1:6)], na.rm = T)
+}
+
+
+##calulate the num of every type of crime for each institution every year
+d.schools <- ldply(schools)
+agg1 <- aggregate(d.schools[,-c(1:6)], list(d.schools$Survey.year, d.schools$Institution.name), sum)
+enrollment <- c(9181, 2209, 12587, 27589, 21679, 6298, 15865, 14769, 17858, 28791, 21372, 11319, 21554  ,8808, 6621, 16963,10907, 37565, 41845, 15097, 43625, 29135, 12179, 24806, 42453, 23732, 12686, 7788, 14348, 12336)
+enrollment <- as.vector(sapply(enrollment, rep, 14))
+agg1$institution.size <- enrollment
+agg1$crime.rate <- round(agg1$total/agg1$institution.size,4)
+
+#2014 data for every school
+schools2014 <- agg1[agg1$Group.1 == "2014",]
+t.schools2014 <- t(schools2014)[-1,]
+colnames(t.schools2014) <- as.character(t.schools2014[1,])
+t.schools2014 <- as.data.frame(t.schools2014[-1,])
+
+```
+
+
+

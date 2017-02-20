@@ -56,6 +56,10 @@ sum(is.na(campus[,2:3]))
 unselect <- unique(crimes$Institution.name)[c(710,945,1121,1340,1531,2797)]
 new_crimes <- crimes[! crimes$Institution.name %in% unselect,]
 
+#write.csv(coordinate_3,file="test3.csv")
+# which(is.na(coordinate)) some of them are NA
+
+
 ## Get U.S. Map
 map <- get_map(location = "united states", zoom = 4, maptype = "toner",source = "stamen")
 

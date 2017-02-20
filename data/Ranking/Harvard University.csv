@@ -1,0 +1,37 @@
+Survey year,Unitid,Institution name,Campus ID, Campus Name,Institution Size,Murder/Non-negligent manslaughter,Negligent manslaughter,Sex offenses - Forcible,Rape,Fondling,Sex offenses - Non-forcible,Incest,Statutory rape,Robbery,Aggravated assault,Burglary,Motor vehicle theft,Arson
+2001,166027,Harvard University,1,Cambridge Campus,24474,0,0,23,,,0,,,2,5,342,15,0
+2001,166027,Harvard University,2,Longwood Campus,24474,0,0,0,,,0,,,0,1,67,0,0
+2002,166027,Harvard University,1,Cambridge Campus,24969,0,0,24,,,0,,,2,4,393,3,0
+2002,166027,Harvard University,2,Longwood Campus,24969,0,0,0,,,0,,,0,0,47,0,0
+2003,166027,Harvard University,1,Cambridge Campus,24851,0,0,16,,,0,,,2,6,451,6,0
+2003,166027,Harvard University,2,Longwood Campus,24851,0,0,1,,,0,,,0,0,80,0,0
+2004,166027,Harvard University,1,Cambridge Campus,24648,0,0,30,,,0,,,0,2,372,7,1
+2004,166027,Harvard University,2,Longwood Campus,24648,0,0,0,,,0,,,0,1,74,0,0
+2005,166027,Harvard University,1,Cambridge Campus,25017,0,0,12,,,0,,,1,5,327,2,1
+2005,166027,Harvard University,2,Longwood Campus,25017,0,0,0,,,0,,,0,0,60,0,0
+2006,166027,Harvard University,1,Cambridge Campus,25778,0,0,18,,,0,,,3,5,261,4,0
+2006,166027,Harvard University,2,Longwood Campus,25778,0,0,0,,,0,,,0,0,54,2,0
+2007,166027,Harvard University,1,Cambridge Campus,25690,0,0,15,,,0,,,3,8,259,5,0
+2007,166027,Harvard University,2,Longwood Campus,25690,0,0,0,,,0,,,0,0,42,0,0
+2008,166027,Harvard University,1,Cambridge Campus,26496,0,0,15,,,0,,,4,2,230,3,0
+2008,166027,Harvard University,2,Longwood Campus,26496,0,0,0,,,0,,,0,0,63,1,0
+2009,166027,Harvard University,1,Cambridge Campus,27651,1,0,17,,,0,,,3,3,21,4,0
+2009,166027,Harvard University,2,Longwood Campus,27651,0,0,0,,,0,,,0,0,3,0,0
+2010,166027,Harvard University,1,Cambridge Campus,27594,0,0,31,,,4,,,8,5,35,3,0
+2010,166027,Harvard University,2,Longwood Campus,27594,0,0,0,,,0,,,0,0,5,1,0
+2011,166027,Harvard University,1,Cambridge Campus,27392,0,0,21,,,0,,,1,7,24,3,0
+2011,166027,Harvard University,2,Longwood Campus,27392,0,0,0,,,0,,,0,0,4,0,0
+2012,166027,Harvard University,1,Cambridge Campus,28147,0,0,31,,,0,,,1,2,34,3,1
+2012,166027,Harvard University,2,Longwood Campus,28147,0,0,0,,,0,,,0,0,5,0,0
+2013,166027,Harvard University,1,Cambridge Campus,28297,0,0,35,,,0,,,1,1,30,1,0
+2013,166027,Harvard University,2,Longwood Campus,28297,0,0,0,,,0,,,0,1,6,1,0
+2013,166027,Harvard University,3,Concord Field Station,28297,0,0,0,,,0,,,0,0,0,0,0
+2013,166027,Harvard University,4,Arnold Arboretum,28297,0,0,0,,,0,,,0,0,2,0,0
+2013,166027,Harvard University,6,Harvard Forest,28297,0,0,0,,,0,,,0,0,0,0,0
+2013,166027,Harvard University,7,Southborough Campus,28297,0,0,0,,,0,,,0,0,0,0,0
+2014,166027,Harvard University,1,Cambridge Campus,28791,0,0,,33,6,,0,0,1,1,40,1,0
+2014,166027,Harvard University,2,Longwood Campus,28791,0,0,,1,0,,0,0,0,0,0,0,0
+2014,166027,Harvard University,3,Concord Field Station,28791,0,0,,0,0,,0,0,0,0,0,0,0
+2014,166027,Harvard University,4,Arnold Arboretum,28791,0,0,,0,0,,0,0,0,0,0,0,0
+2014,166027,Harvard University,6,Harvard Forest,28791,0,0,,0,0,,0,0,0,0,0,0,0
+2014,166027,Harvard University,7,Southborough Campus,28791,0,0,,0,0,,0,0,0,0,0,0,0

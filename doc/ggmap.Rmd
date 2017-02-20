@@ -83,15 +83,26 @@ all.equal(new_all_year_ttl$Institution.name, new_campus$campus)
 ## All year total crime for each campus 
 new_campus$total <- new_all_year_ttl$Total
 
+
+## Append institution size
+size <- aggregate(final_crimes$sub_total, by = list(final_crimes$Institution.name, final_crimes$Institution.Size), FUN = sum)
+order_size <- size[order(size$Group.1),]
+names(order_size) <- c("insti.name", "size")
+final_size <- aggregate(order_size$size, by = list(order_size$insti.name), FUN = sum)
+all.equal(final_size$Group.1, new_campus$campus)
+new_campus$pop <- final_size$x
+new_campus$rate <- new_campus$total / new_campus$pop
 ```
 
 
 ```{r}
 ## Draw the map w.r.t total crimes in each campus
-ggmap(map, base_layer = ggplot(aes(x = lon, y = lat), data = new_campus)) + geom_point(aes(x=lon, y=lat, size = total), data = new_campus, alpha=.4) + stat_density2d(aes(x = lon, y = lat, fill=..level..), data = new_campus, geom="polygon", alpha=0.2) #+ scale_fill_gradient(low = "yellow", high = "red")
+ggmap(map, base_layer = ggplot(aes(x = lon, y = lat), data = new_campus)) + geom_point(aes(x=lon, y=lat, level = rate), col = 2, data = new_campus, alpha=.2) #+ stat_density2d(aes(x = lon, y = lat, fill=..level..), data = new_campus, geom="polygon", alpha=0.2) #+ scale_fill_gradient(low = "yellow", high = "red")
 ```
 
-```{r}
 
-```
+
+
+
+
 

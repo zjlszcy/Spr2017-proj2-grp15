@@ -5,18 +5,14 @@ library("gridExtra")
 library("ggplot2")
 library(shinydashboard)
 library(DT)
-library(reshape2)
-library(corrplot)
 library(dplyr)
 library(ggmap)
 library(ggplot2)
 library(maps)
 library(flexdashboard)
-library(leaflet)
-library(d3heatmap)
 
 # load data 
-state_crimes <- read.csv("CrimeStatebyState-clean.csv",header=T)
+state_crimes <- read.csv("/Users/ouminamikun/Desktop/Columbia/Spring 2017/ADS/Spr2017-proj2-grp15/data/CrimeStatebyState-clean.csv",header=T)
 state_crimes <- subset(na.omit(state_crimes), 
                        !(State %in% c("United States", "District of Columbia")))
 state_crimes <- na.omit(state_crimes[,-7])
@@ -84,16 +80,6 @@ shinyServer(function(input, output) {
       }
     )
  
-    ##### US state Heat Map  #####
-    output$heatmap <- renderD3heatmap({
-      d3heatmap(
-        scale=aa,
-        dendrogram = "none",
-        colors = scales::col_quantile("Blues",NULL,10)
-        
-      )
-    })
-    
     output$title1<-renderText(US_Crime_Visual)
   
 })

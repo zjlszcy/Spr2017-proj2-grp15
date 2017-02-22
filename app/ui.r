@@ -1,40 +1,75 @@
-library(shiny)
+library(shinydashboard)
 
-# Define UI for application that draws a histogram
-shinyUI(fluidPage(
-  
+shinyUI(dashboardPage(
   # Application title
-  titlePanel("2009 Manhattan Housing Sales"),
+  dashboardHeader(title = "US Crime Data App"),
   
-  # Sidebar with a selector input for neighborhood
-  sidebarLayout(
-    sidebarPanel(
-      selectInput("nbhd", label = h5("Choose a Manhattan Neighborhood"), 
-                         choices = list("all neighborhoods"=0,
-                                        "Central Harlem"=1, 
-                                        "Chelsea and Clinton"=2,
-                                        "East Harlem"=3, 
-                                        "Gramercy Park and Murray Hill"=4,
-                                        "Greenwich Village and Soho"=5, 
-                                        "Lower Manhattan"=6,
-                                        "Lower East Side"=7, 
-                                        "Upper East Side"=8, 
-                                        "Upper West Side"=9,
-                                        "Inwood and Washington Heights"=10), 
-                         selected = 0)
-      #sliderInput("p.range", label=h3("Price Range (in thousands of dollars)"),
-      #            min = 0, max = 20000, value = c(200, 10000))
-    ),
-    # Show two panels
-    mainPanel(
-      #h4(textOutput("text")),
-      h3(code(textOutput("text1"))),
-      tabsetPanel(
-        # Panel 1 has three summary plots of sales. 
-        tabPanel("Sales summary", plotOutput("distPlot")), 
-        # Panel 2 has a map display of sales' distribution
-        tabPanel("Sales map", plotOutput("distPlot1")))
+  # Sidebar
+  dashboardSidebar(
+    sidebarMenu(
+      menuItem("US Crime Map", tabName = "crime_map", icon = icon("globe"),badgeColor='light-blue'),
+      menuItem("CA Crime Map", tabName = 'ca_map', icon = icon('globe'),badgeColor='red'),
+      menuItem("Comparasion", tabName = "comparasion", icon = icon("calendar"))
     )
- )
+  ),
+ 
+   # Body 
+  dashboardBody(
+    tabItems(
+      # tab-item one: state crime map
+      tabItem(tabName = "crime_map",
+              fluidRow(box(htmlOutput("title1"),width=12,background='light-blue')),
+        
+              fluidRow(infoBoxOutput("maxbox"),
+                       infoBoxOutput("medbox"),
+                       infoBoxOutput("minbox")),
+              fluidRow(htmlOutput("map"), title='US Crime Colored Map'),
+              fluidRow(
+                column(10,
+                       sliderInput("Year",
+                                   label = "Choose year:",min=2001,max=2014,value=2008,animate=T)
+                )
+              ),
+              
+              fluidRow(leafletOutput("school_map"))
+      ),
+  
+      
+      # tab-item two: ca crime map 
+      tabItem(tabName = "ca_map",
+              fluidRow(box(plotOutput("camap"),width = 12,background='navy')),
+              fluidRow(
+                column(10,
+                       sliderInput("YEAR",
+                                   label="Choose your Year",min=2006,max=2015,value=2008,animate=T))
+              )
+      ),
+#################tab-item three: Comparasion ##########################################################      
+      tabItem(tabName = "comparasion",
+              fluidPage(
+                titlePanel( 'Compare Data for Multiple Schools'),
+                sidebarLayout(
+                  sidebarPanel(
+                    checkboxGroupInput(inputId = 'show_schools', 
+                                       label = 'Schools to compare:',
+                                       choices = as.character(colnames(t.schools2014)), 
+                                       selected = as.character(colnames(t.schools2014)[c(1,2)]), 
+                                       width = "200px"
+                    )
+                  ),
+                  mainPanel(
+                    tabsetPanel(
+                      id = 'criminal.offenses',
+                      tabPanel('Criminal Offenses', 
+                               DT::dataTableOutput('criminal.offenses'),
+                               plotOutput("rate.bar"),
+                               plotOutput("schoolTrend")))
+                  )
+                )
+              ))
+#######################################################################################################    
+    )
+  )
 ))
+
 

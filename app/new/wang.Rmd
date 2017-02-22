@@ -101,16 +101,19 @@ shinyApp(ui = ui, server = server)
 
 #School pick map
 ```{r}
-################################### Schools pick on map #############################################
+################################### Schools leaflet #############################################
 ui <- fluidPage(
   leafletOutput("school_map")
 )
 
 server <- function(input, output){
   output$school_map <- renderLeaflet({
-    leaflet() %>%
-      addTiles() %>% 
-  addMarkers(lng=new_campus[,2], lat=new_campus[,3], popup=as.character(new_campus[,1]))
+      leaflet(new_campus) %>%
+        addTiles() %>% 
+  addMarkers(lng=new_campus[,2], lat=new_campus[,3], 
+             popup=paste(as.character(new_campus[,1]),
+                         as.character(new_campus[,7]), sep = ", "),
+             clusterOptions = markerClusterOptions(freezeAtZoom = 10))
   })
 }
 

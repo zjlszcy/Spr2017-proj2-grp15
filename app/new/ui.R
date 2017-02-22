@@ -8,7 +8,6 @@ shinyUI(dashboardPage(
   dashboardSidebar(
     sidebarMenu(
       menuItem("US Crime Map", tabName = "crime_map", icon = icon("globe"),badgeColor='light-blue'),
-      menuItem("CA Crime Map", tabName = 'ca_map', icon = icon('globe'),badgeColor='red'),
       menuItem("Comparasion", tabName = "comparasion", icon = icon("calendar")),
       menuItem("US Campus Crime", tabName = "dashboard", icon = icon("globe"))
     )

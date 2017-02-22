@@ -9,7 +9,8 @@ shinyUI(dashboardPage(
     sidebarMenu(
       menuItem("US Crime Map", tabName = "crime_map", icon = icon("globe"),badgeColor='light-blue'),
       menuItem("CA Crime Map", tabName = 'ca_map', icon = icon('globe'),badgeColor='red'),
-      menuItem("Comparasion", tabName = "comparasion", icon = icon("calendar"))
+      menuItem("Comparasion", tabName = "comparasion", icon = icon("calendar")),
+      menuItem("US Campus Crime", tabName = "dashboard", icon = icon("globe"))
     )
   ),
  
@@ -66,9 +67,20 @@ shinyUI(dashboardPage(
                                plotOutput("schoolTrend")))
                   )
                 )
-              ))
+              )),
+
 #######################################################################################################    
-    )
+    tabItem(tabName = "dashboard",
+        fluidRow(leafletOutput("campus_map")),
+        fluidRow(box(plotOutput("map"),width = 16)),
+        fluidRow(
+          column(10,
+                 sliderInput("YEAR",
+                             label="Choose your Year",min=2001,max=2014,value=2008,animate=T))
+        )
+        
+)    
+)
   )
 ))
 

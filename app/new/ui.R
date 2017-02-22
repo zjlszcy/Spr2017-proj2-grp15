@@ -8,8 +8,8 @@ shinyUI(dashboardPage(
   dashboardSidebar(
     sidebarMenu(
       menuItem("US Crime Map", tabName = "crime_map", icon = icon("globe"),badgeColor='light-blue'),
-      menuItem("Comparasion", tabName = "comparasion", icon = icon("calendar")),
-      menuItem("US Campus Crime", tabName = "dashboard", icon = icon("globe"))
+      menuItem("US Campus Crime", tabName = "dashboard", icon = icon("globe")),
+      menuItem("Comparasion", tabName = "comparasion", icon = icon("calendar"))
     )
   ),
  
@@ -23,7 +23,7 @@ shinyUI(dashboardPage(
               fluidRow(infoBoxOutput("maxbox"),
                        infoBoxOutput("medbox"),
                        infoBoxOutput("minbox")),
-              fluidRow(htmlOutput("map"), title='US Crime Colored Map'),
+              fluidRow(htmlOutput("stmap"), title='US Crime Colored Map'),
               fluidRow(
                 column(10,
                        sliderInput("Year",
@@ -35,16 +35,7 @@ shinyUI(dashboardPage(
       ),
   
       
-      # tab-item two: ca crime map 
-      tabItem(tabName = "ca_map",
-              fluidRow(box(plotOutput("camap"),width = 12,background='navy')),
-              fluidRow(
-                column(10,
-                       sliderInput("YEAR",
-                                   label="Choose your Year",min=2006,max=2015,value=2008,animate=T))
-              )
-      ),
-#################tab-item three: Comparasion ##########################################################      
+#################tab-item two: Comparasion ##########################################################      
       tabItem(tabName = "comparasion",
               fluidPage(
                 titlePanel( 'Compare Data for Multiple Schools'),

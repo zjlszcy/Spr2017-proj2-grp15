@@ -16,6 +16,7 @@ library(leaflet)
 library(googleVis)
 library(RColorBrewer)
 
+# load("../output/state_crime.RData")
 
 shinyServer(function(input, output) {
   
@@ -31,7 +32,7 @@ shinyServer(function(input, output) {
 
     
   ##### US state total number of crimes Map #####
-    output$map <- renderGvis({
+    output$stmap <- renderGvis({
       DF<-crime_data()
       gvisGeoChart(DF, locationvar = "State", colorvar ="# Crimes per 10000 people",
                    options=list(region="US", 

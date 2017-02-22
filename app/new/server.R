@@ -51,31 +51,8 @@ colnames(ca_agg)<-c("Year","region","value")
 state_crime <- state_crimes[order(state_crimes$State,state_crimes$Year),]
 US_Crime_Visual <- "US Crime Data Visualization"
 
-####################################global#############################################################
-library(DT)
-library(plyr)
-crimes <- read.csv("../data/OPE CSS Custom Data 2017-02-12 134856/Criminal_Offenses_On_campus.csv", header = T)
-for(i in 6:19){
-  as.numeric(crimes[,i])
-} 
-##calculate total num of crimes for every year
-crimes$total <- rowSums(crimes[,-c(1:6)],na.rm = TRUE)
-crimes.split <- split(crimes, f = as.factor(crimes$Survey.year))
-year.sum <- NA
-for(i in 1: length(crimes.split)){
-  year.sum[i] <- sum(crimes.split[[i]]$total) 
-} 
-
-#calculate num of every type of crimes for every year
-agg <- aggregate(crimes[,-c(1:6)], list(crimes$Survey.year), sum)
 
 
-
-
-##read in all universities files
-schools.list <- list.files(path = "../data/Ranking/", pattern = "*.csv")
-schools.list <- paste("/Users/ouminamikun/Desktop/Columbia/Spring 2017/ADS/Spr2017-proj2-grp15/data/Ranking/", schools.list, sep = "")
-schools <- lapply(schools.list, read.csv)
 
 #calculate total crimes for each campus
 for(i in 1:30){
@@ -200,7 +177,7 @@ names(each_year) <- c("Year", "Name", "Total")
 combine <- merge(each_year, new_campus, by.x = "Name", by.y = "campus")
 map1 <- get_map(location = "united states", zoom = 4, , maptype = "toner",source = "stamen")
 
-#######################################################################################################
+######################################################################################################
 ###########################Shiny Server############################
 shinyServer(function(input, output) {
   
@@ -331,20 +308,17 @@ shinyServer(function(input, output) {
               col = "pink", xlab = "Schools", ylab = "Crime Rate")
     })
     
-    school.rows <- reactive( {agg1$Group.2 == input$show_schools})
+    school.names <- reactive( {unique(input$show_schools)})
     output$schoolTrend <- renderPlot({
-      plot(x = c(2001:2014), 
-           y = agg1$total[agg1$Group.2 == unique(input$show_schools)[1]], 
-           type = "lines",
-           xlab = "Year",
-           ylab = "Total Crimes",
-           col = "Red")
-      lines(x = c(2001:2014), 
-            y = agg1$total[agg1$Group.2 == unique(input$show_schools)[2]],
-            col = "blue")
-      legend("topright", col = c("red", "blue"), lty = c(1,1), 
-             legend = c(unique(input$show_schools)[1], unique(input$show_schools)[2]))
-      
+      xrange <- range(agg1$Group.1) 
+      yrange <- c(0,500)
+      plot(xrange, yrange, type="n", xlab="Years",ylab="Total Crimes")
+      for(i in 1:length(school.names())){
+        d <- subset( agg1, agg1$Group.2 == school.names()[i] )
+        lines(d$Group.1, d$total, col = i)
+        legend("topright", col = c(1:length(school.names())),
+               legend = school.names(), lty = rep(1,length(school.names())))
+      }
       
     })
 ######################################################################################################    

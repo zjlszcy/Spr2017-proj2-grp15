@@ -16,7 +16,7 @@ library(leaflet)
 library(googleVis)
 library(RColorBrewer)
 
-# load("../output/state_crime.RData")
+ 
 
 shinyServer(function(input, output) {
   

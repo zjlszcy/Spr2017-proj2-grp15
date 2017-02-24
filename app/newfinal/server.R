@@ -139,7 +139,11 @@ shinyServer(function(input, output, session) {
               addTiles() %>%
               addAwesomeMarkers(clusterOptions = markerClusterOptions(), lng=new_campus[,2], lat=new_campus[,3], 
                                 icon = icons, label = as.character(new_campus$rate),
-                         popup= paste(new_campus$campus,"<br>","Crime Rate (Per 1000 People):", new_campus$rate))
+                         popup= paste(new_campus$campus,"<br>","Crime Rate (Per 1000 People):", new_campus$rate)) %>%
+              addLegend("bottomright",colors=c("green","orange","red"),
+                        label=c("0-0.97","0.97-2.29",">2.29"),
+                        title="Crime rate")
+        
       }
     })
     

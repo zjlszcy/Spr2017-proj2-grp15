@@ -241,6 +241,11 @@ names(new_campus$state) <- c("state")
 new_campus <- new_campus[-which(new_campus$campus == "Adler University"),]
 new_campus$state[which(new_campus$campus == "AI Miami International University of Art and Design")] <- "florida"
 new_campus$state[which(new_campus$campus == "Alaska Pacific University")] <- "alaska"
+new_campus$state[which(new_campus$campus == "The California Maritime Academy")] <- "california"
+new_campus$state[which(new_campus$campus == "Webb Institute")] <- "new york"
+new_campus <- new_campus[-which(new_campus$campus == "Polytechnic University of Puerto Rico-Miami"),]
+new_campus <- new_campus[-which(new_campus$campus == "Berea College"),]
+new_campus$state <- toupper(new_campus$state)
 ```
 
 

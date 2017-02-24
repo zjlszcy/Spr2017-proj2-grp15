@@ -1,10 +1,10 @@
 name: newfinal
-title:
+title: newfinal
 account: campus-crime-wzz
 server: shinyapps.io
 appId: 159080
-bundleId: 723130
+bundleId: 723139
 url: https://campus-crime-wzz.shinyapps.io/newfinal/
-when: 1487915597.11375
+when: 1487916578.42095
 asMultiple: FALSE
 asStatic: FALSE

@@ -1,3 +1,4 @@
+load("workspace1.RData")
 library(shiny)
 library(reshape2)
 library("googleVis")
@@ -30,9 +31,9 @@ if(! require(leaflet))
 require(plotly)
 require(leaflet)
  
-load("workspace1.RData")
 
-shinyServer(function(input, output) {
+
+shinyServer(function(input, output, session) {
   
   #### Reactive data frame that will dynamically change based on year chosen(for state) ####
     crime_data <- reactive({
@@ -102,34 +103,51 @@ shinyServer(function(input, output) {
 
     
 ################################### Schools leaflet #############################################
+    getColor <- function(camp) {
+      sapply(camp$rate, function(rate) {
+        if(rate <= 0.97) {
+          "green"
+        } else if(rate <= 2.29) {
+          "orange"
+        } else {
+          "red"
+        } })
+    }
+    
+    icons <- awesomeIcons(
+      icon = 'ios-close',
+      iconColor = 'black',
+      library = 'ion',
+      markerColor = getColor(new_campus)
+    )
 
+    
     campus_data <- reactive({
-      subset(combine, Year == input$YEAR)
+      part <- subset(new_campus, new_campus$state == input$states)
     })
     
+
     output$campus_map <- renderLeaflet({
+      if(input$all_state == F){
       leaflet() %>%
-        addTiles() %>% 
-        addMarkers(clusterOptions = markerClusterOptions(), lng=new_campus[,2], lat=new_campus[,3], 
-                   popup= paste(new_campus$campus,"<br>","Crime Rate (Per 1000 People):", new_campus$rate))
+        addTiles() %>%
+        addAwesomeMarkers(clusterOptions = markerClusterOptions(), lng=campus_data()[,2], lat=campus_data()[,3],
+                          label = as.character(campus_data()$rate),
+      popup= paste(campus_data()[,1],"<br>","Crime Rate (Per 1000 People):", campus_data()[,6]))}
+      else{
+        leaflet() %>%
+              addTiles() %>%
+              addAwesomeMarkers(clusterOptions = markerClusterOptions(), lng=new_campus[,2], lat=new_campus[,3], 
+                                icon = icons, label = as.character(new_campus$rate),
+                         popup= paste(new_campus$campus,"<br>","Crime Rate (Per 1000 People):", new_campus$rate))
+      }
     })
     
     
-
-      output$school_map <- renderLeaflet({
-        leaflet(new_campus) %>%
-          addTiles() %>% 
-          addMarkers(lng=new_campus[,2], lat=new_campus[,3], 
-                     popup=paste(as.character(new_campus[,1]),
-                                 as.character(new_campus[,7]), sep = ", "),
-                     clusterOptions = markerClusterOptions(freezeAtZoom = 10))
-      })
-
-##################################################################################################
-    
-   
-    
-   
+   output$state_select <- renderUI({
+     state_num <- new_campus$state[order(new_campus$state)]
+     selectInput("states", "Your State", choices = state_num, selected = T)
+   })
   
 ##########################################Schools Comparasion#####################################
     school <- t.schools2014

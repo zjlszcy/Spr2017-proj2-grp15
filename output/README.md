@@ -1,4 +1,4 @@
-# Project: NYC Open Data
+# Project 2: US Campus Crime (data.gov)
 ### Output folder
 
 The output directory contains analysis output, processed datasets, logs, or other processed things.

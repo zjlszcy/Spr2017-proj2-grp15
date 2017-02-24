@@ -6,11 +6,12 @@ output: html_notebook
 ```{r}
 library(DT)
 library(plyr)
+
 ```
 
 ##load in the data
 ```{r}
-new_campus <- read.csv("new_campus2.csv")
+new_campus <- read.csv("../data/new_campus2.csv")
 crimes <- read.csv("../data/OPE CSS Custom Data 2017-02-12 134856/Criminal_Offenses_On_campus.csv", header = T)
 for(i in 6:19){
   as.numeric(crimes[,i])
@@ -96,7 +97,7 @@ colnames(ca_agg)<-c("Year","region","value")
 state_crime <- state_crimes[order(state_crimes$State,state_crimes$Year),]
 US_Crime_Visual <- "US Crime Data Visualization"
 
-coordinate_usa_all<-read.csv("coordinateusa.csv",header=T)
+coordinate_usa_all<-read.csv("../data/coordinateusa.csv",header=T)
 coordinate_usa_all <- coordinate_usa_all[,-1]
 state_crime <- cbind(state_crime,coordinate_usa_all)
 state_crime$code <- state.abb[match(state_crime$State,state.name)]

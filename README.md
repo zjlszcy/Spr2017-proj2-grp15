@@ -28,7 +28,7 @@ Term: Spring 2017
 	+ Nanjun Wang
 	+ Yuxin Zhu
 	
-+ **App link**:  
++ **App link**: https://campus-crime-wzz.shinyapps.io/update_new_final/
 
 + **Project summary**: We design a Shinyapp to help perspective students who take safety as priority when selecting universities in United States. To use this app, it only takes three steps. First, select optimal states. Second, select multiple schools. Third, compare them and make final decision. To accomplish these three steps, we design three functioning parts: US state crime map, US school cirme map, comparasion data table. If users follow our steps by using three parts in order, they will find their optimal school to choose.
 

@@ -32,7 +32,7 @@ Term: Spring 2017
 
 + **Project summary**: We design a Shinyapp to help perspective students who take safety as priority when selecting universities in United States. To use this app, it only takes three steps. First, select optimal states. Second, select multiple schools. Third, compare them and make final decision. To accomplish these three steps, we design three functioning parts: US state crime map, US school cirme map, comparasion data table. If users follow our steps by using three parts in order, they will find their optimal school to choose.
 
-+ **Contribution statement**: ([default](doc/a_note_on_contributions.md)) All team members contributed equally in all stages of this project. Yuxin Zhu is mainly responsible for the first tab "US Crime Map", Chenyu Zhu is mainly responsible for the second tab "US Campus Crime", Nanjun Wang is mainly responsible for the third tab " Comparasion". All team members approve our work presented in this GitHub repository including this contributions statement. 
++ **Contribution statement**: ([default](doc/a_note_on_contributions.md)) All team members contributed equally in all stages of this project. Yuxin Zhu is mainly responsible for the first tab "US Crime Map", Chenyun Zhu is mainly responsible for the second tab "US Campus Crime", Nanjun Wang is mainly responsible for the third tab " Comparasion". All team members approve our work presented in this GitHub repository including this contributions statement. 
 
 Following [suggestions](http://nicercode.github.io/blog/2013-04-05-projects/) by [RICH FITZJOHN](http://nicercode.github.io/about/#Team) (@richfitz). This folder is orgarnized as follows.
 

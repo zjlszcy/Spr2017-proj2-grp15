@@ -47,7 +47,7 @@ shinyUI(dashboardPage(
     sidebarMenu(
       menuItem("US Crime Map", tabName = "crime_map", icon = icon("map-marker"), badgeColor='light-blue'),
       menuItem("US Campus Crime", tabName = "dashboard", icon = icon("university")),
-      menuItem("Comparasion", tabName = "comparasion", icon = icon("graduation-cap"))
+      menuItem("Comparison", tabName = "comparasion", icon = icon("graduation-cap"))
     )
   ),
  

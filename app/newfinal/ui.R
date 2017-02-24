@@ -19,6 +19,8 @@ library(googleVis)
 library(RColorBrewer)
 library(plotly)
 
+load("workspace1.RData")
+
 if(! require(plotly))
 {
   install.packages("plotly")

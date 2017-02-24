@@ -1,3 +1,4 @@
+load("workspace1.RData")
 library(shiny)
 library(reshape2)
 library("googleVis")
@@ -30,7 +31,7 @@ if(! require(leaflet))
 require(plotly)
 require(leaflet)
  
-load("workspace1.RData")
+
 
 shinyServer(function(input, output) {
   

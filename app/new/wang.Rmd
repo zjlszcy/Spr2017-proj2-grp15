@@ -9,7 +9,7 @@ library(plotly)
 library(ggplot2)
 library(leaflet)
 
-#################################### Schools Comparision ############################################
+############################### Schools Comparision###############################################
 ui <- fluidPage(
   titlePanel( 'Compare Data for Multiple Schools'),
   sidebarLayout(
@@ -47,6 +47,7 @@ server <- function(input, output) {
   
   
   output$rate.bar <- renderPlot({
+    
     barplot(as.matrix(schools.selected()[dim(schools.selected())[1],]), 
             col = "pink", xlab = "Schools", ylab = "Crime Rate")
     })
@@ -103,7 +104,20 @@ shinyApp(ui = ui, server = server)
 ```{r}
 ################################### Schools leaflet #############################################
 ui <- fluidPage(
-  leafletOutput("school_map")
+ titlePanel( 'Choose Multiple Schools'),
+  sidebarLayout(
+    sidebarPanel(
+        selectInput(inputId = 'states', 
+                           label = 'Your state:',
+                           choices = as.character(unique(new_campus$state)), 
+                           selected = as.character(unique(new_campus$state)[1]), 
+                           width = "200px"
+      )
+    ),
+    mainPanel(
+      leaflet("campus_map")
+      )
+    )
 )
 
 server <- function(input, output){

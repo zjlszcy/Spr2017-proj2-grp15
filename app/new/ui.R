@@ -7,9 +7,9 @@ shinyUI(dashboardPage(
   # Sidebar
   dashboardSidebar(
     sidebarMenu(
-      menuItem("US Crime Map", tabName = "crime_map", icon = icon("globe"),badgeColor='light-blue'),
-      menuItem("US Campus Crime", tabName = "dashboard", icon = icon("globe")),
-      menuItem("Comparasion", tabName = "comparasion", icon = icon("calendar"))
+      menuItem("US Crime Map", tabName = "crime_map", icon = icon("map-marker"), badgeColor='light-blue'),
+      menuItem("US Campus Crime", tabName = "dashboard", icon = icon("university")),
+      menuItem("Comparasion", tabName = "comparasion", icon = icon("graduation-cap"))
     )
   ),
  
@@ -23,15 +23,13 @@ shinyUI(dashboardPage(
               fluidRow(infoBoxOutput("maxbox"),
                        infoBoxOutput("medbox"),
                        infoBoxOutput("minbox")),
-              fluidRow(htmlOutput("stmap"), title='US Crime Colored Map'),
+              fluidRow(plotlyOutput("stmap"), title='US Crime Colored Map'),
               fluidRow(
                 column(10,
                        sliderInput("Year",
                                    label = "Choose year:",min=2001,max=2014,value=2008,animate=T)
                 )
-              ),
-              
-              fluidRow(leafletOutput("school_map"))
+              )
       ),
   
       
@@ -61,17 +59,11 @@ shinyUI(dashboardPage(
 
 #######################################################################################################    
     tabItem(tabName = "dashboard",
-        fluidRow(leafletOutput("campus_map")),
-        fluidRow(box(plotOutput("map"),width = 16)),
-        fluidRow(
-          column(10,
-                 sliderInput("YEAR",
-                             label="Choose your Year",min=2001,max=2014,value=2008,animate=T))
-        )
+        fluidRow(leafletOutput("campus_map", width = "120%", height = 800)))
         
 )    
 )
   )
-))
+)
 
 

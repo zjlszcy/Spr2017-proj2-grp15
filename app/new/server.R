@@ -15,8 +15,8 @@ library(flexdashboard)
 library(leaflet)
 library(googleVis)
 library(RColorBrewer)
-
-# load("../output/state_crime.RData")
+library(plotly)
+ 
 
 shinyServer(function(input, output) {
   
@@ -32,15 +32,28 @@ shinyServer(function(input, output) {
 
     
   ##### US state total number of crimes Map #####
-    output$stmap <- renderGvis({
+    output$stmap <- renderPlotly({
       DF<-crime_data()
-      gvisGeoChart(DF, locationvar = "State", colorvar ="# Crimes per 10000 people",
-                   options=list(region="US", 
-                                title='State Crime',
-                                resolution="provinces", 
-                                width='1000px',height='600px',
-                                backgroundColor='#F6E3CE'))
-   
+      DF$hover <- with(DF, paste(State, '<br>',"Crimes: ", round(value), "<br>"))
+      # give state boundaries a white border
+      l <- list(color = toRGB("white"), width = 2)
+      # specify some map projection/options
+      g <- list(
+        scope = 'usa',
+        projection = list(type = 'albers usa'),
+        showlakes = TRUE,
+        lakecolor = toRGB('white')
+      )
+      
+      plot_geo(DF, locationmode = 'USA-states') %>%
+        add_trace(z = ~value, 
+                  text = ~hover, 
+                  locations = ~code,
+                  color = ~value, 
+                  colors = 'Blues') %>%
+        colorbar(title = "Total Crimes per 100000 people") %>%
+        layout(geo = g)
+      
     })   
 
     
@@ -48,7 +61,7 @@ shinyServer(function(input, output) {
     output$maxbox <- renderInfoBox(
       {
         DF <- crime_data()
-        outData <- DF[,"# Crimes per 10000 people"]
+        outData <- DF[,"value"]
         max_value <- max(outData,na.rm = T)
         max_state <- DF$State[outData==max_value]
         infoBox(max_state,round(max_value),icon = icon("chevron-up"),color='blue')
@@ -57,19 +70,19 @@ shinyServer(function(input, output) {
     output$minbox <- renderInfoBox(
       {
         DF <- crime_data()
-        outData <- DF[,"# Crimes per 10000 people"]
+        outData <- DF[,"value"]
         min_value <- min(outData,na.rm = T)
         min_state <- DF$State[outData==min_value]
-        infoBox(min_state,round(min_value),icon = icon("chevron-down"),color='yellow')
+        infoBox(min_state,round(min_value),icon = icon("chevron-down"),color='green')
       }
     )
     output$medbox <- renderInfoBox(
       {
         DF <- crime_data()
-        outData <- DF[,"# Crimes per 10000 people"]
+        outData <- DF[,"value"]
         med_value <- median(outData,na.rm = T)
         med_state <- DF$State[outData==med_value]
-        infoBox(paste("Median",input$Year),round(med_value),icon = icon("calendar"),color='red')
+        infoBox(paste("Median",input$Year),round(med_value),icon = icon("calendar"),color='yellow')
       }
     )
 
@@ -84,16 +97,10 @@ shinyServer(function(input, output) {
       leaflet() %>%
         addTiles() %>% 
         addMarkers(clusterOptions = markerClusterOptions(), lng=new_campus[,2], lat=new_campus[,3], 
-                   popup=paste(new_campus[,1], new_campus$rate))
+                   popup= paste(new_campus$campus,"<br>","Crime Rate (Per 1000 People):", new_campus$rate))
     })
     
-    output$map <- renderPlot({
-      campus <- campus_data()
-      myPalette <- colorRampPalette(rev(brewer.pal(11, "Spectral")))
-      sc <- scale_colour_gradientn(colours = myPalette(100), limits=c(1, 5))
-      p <- ggmap(map1, base_layer = ggplot(campus, aes(x = lon, y = lat, colour = rate))) + geom_point(aes(x=lon, y=lat, colour = rate), alpha=1) + sc
-      print(p)
-    })
+    
 
       output$school_map <- renderLeaflet({
         leaflet(new_campus) %>%

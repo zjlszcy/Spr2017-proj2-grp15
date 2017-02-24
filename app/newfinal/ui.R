@@ -20,7 +20,7 @@ library(googleVis)
 library(RColorBrewer)
 library(plotly)
 
-load("workspace1.RData")
+
 
 if(! require(plotly))
 {
@@ -65,7 +65,7 @@ shinyUI(dashboardPage(
               fluidRow(
                 column(10,
                        sliderInput("Year",
-                                   label = "Choose year:",min=2001,max=2014,value=2008,animate=T)
+                                   label = "Choose year:",min=2001,max=2014, value=2008, animate=T)
                 )
               )
       ),
@@ -96,12 +96,29 @@ shinyUI(dashboardPage(
               )),
 
 #######################################################################################################    
-    tabItem(tabName = "dashboard",
-        fluidRow(leafletOutput("campus_map", width = "120%", height = 800)))
+   
+  tabItem(tabName = "dashboard",
+
+        fluidRow(
+          column(width = 9,
+                 box(width = NULL, solidHeader = T,
+                     leafletOutput("campus_map", height = 800))),
+                 column(width = 3,
+                        box(width = NULL, status = "warning",
+                            uiOutput("state_select"),
+                            checkboxInput("all_state", "Show All", FALSE)))
+          
+                 ))
+        
+        
+        )
+        
+        )
         
 )    
 )
-  )
-)
+  
+
+
 
 

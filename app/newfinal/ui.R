@@ -1,3 +1,4 @@
+load("workspace1.RData")
 library(shinydashboard)
 library(shiny)
 library(reshape2)

@@ -30,7 +30,7 @@ Term: Spring 2017
 	
 + **App link**: https://campus-crime-wzz.shinyapps.io/newfinal/
 
-+ **Project summary**: We design a ShinyAPP to help perspective students who take safety as priority when selecting universities in United States. To use this app, it only takes three steps. First, selecting optimal states. Second, selecting multiple schools. Third, comparing them and make final decision. To accomplish these three steps, we design three functioning part: US state crime map, US school cirme map, comparasion data table. If uses follow our steps by using three parts in order, they will find their optimal school to choose.
++ **Project summary**: We design a Shinyapp to help perspective students who take safety as priority when selecting universities in United States. To use this app, it only takes three steps. First, select optimal states. Second, select multiple schools. Third, compare them and make final decision. To accomplish these three steps, we design three functioning parts: US state crime map, US school cirme map, comparasion data table. If users follow our steps by using three parts in order, they will find their optimal school to choose.
 
 + **Contribution statement**: ([default](doc/a_note_on_contributions.md)) All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
 

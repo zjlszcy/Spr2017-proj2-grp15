@@ -108,9 +108,9 @@ shinyServer(function(input, output, session) {
         if(rate <= 0.97) {
           "green"
         } else if(rate <= 2.29) {
-          "orange"
+          "blue"
         } else {
-          "red"
+          "black"
         } })
     }
     
@@ -124,6 +124,7 @@ shinyServer(function(input, output, session) {
     
     campus_data <- reactive({
       part <- subset(new_campus, new_campus$state == input$states)
+      return(part)
     })
     
 
@@ -140,9 +141,9 @@ shinyServer(function(input, output, session) {
               addAwesomeMarkers(clusterOptions = markerClusterOptions(), lng=new_campus[,2], lat=new_campus[,3], 
                                 icon = icons, label = as.character(new_campus$rate),
                          popup= paste(new_campus$campus,"<br>","Crime Rate (Per 1000 People):", new_campus$rate)) %>%
-              addLegend("bottomright",colors=c("green","orange","red"),
+              addLegend("bottomright",colors=c("green","blue","black"),
                         label=c("0-0.97","0.97-2.29",">2.29"),
-                        title="Crime rate")
+                        title="Crime Rate")
         
       }
     })

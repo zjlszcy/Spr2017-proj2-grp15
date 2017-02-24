@@ -101,7 +101,7 @@ shinyServer(function(input, output, session) {
       }
     )
 
-    
+    output$title1<-renderText(US_Crime_Visual)
 ################################### Schools leaflet #############################################
     getColor <- function(camp) {
       sapply(camp$rate, function(rate) {

@@ -2,8 +2,8 @@
 
 ### [Project Description](doc/project2_desc.md)
 
-![screenshot](doc/us.png)\newline
-![screenshot](doc/usSchool.png)\newline
+![screenshot](doc/us.png)\n
+![screenshot](doc/usSchool.png)\n
 ![screenshot](doc/DataTable.png)
 
 
